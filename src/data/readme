@@ -1,2 +1,15 @@
+Here are the core training and dev files extracted from patas. 
+
+training.json and devtest.json are document sets for summarization. 
 The data is stored in a dictionary. 
 {topic id : {doc id : [para1, para2, para3...] } }
+
+training.human.json and devtest.human.json are model summaries created by humans
+The data is stored in a dictionary. 
+{topic id : {sum id: sum text}}
+
+training.peers.json and devtest.peers.json are automatically generated summary files submittedby 
+the contestants at the shared task event. 
+The data is stored in a dictionary. 
+{topic id : {sum id: sum text}}
+
