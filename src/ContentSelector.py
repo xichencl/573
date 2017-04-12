@@ -1,6 +1,7 @@
 import nltk
 import math
 import json
+import re
 from sklearn.linear_model import LinearRegression
 
 class ContentSelector:
@@ -15,10 +16,7 @@ class ContentSelector:
 
         for doc in docs.keys():
             a_doc = docs[doc]
-            if len(a_doc) > 1:
-                words = nltk.word_tokenize(a_doc[1])
-            else:
-                words = nltk.word_tokenize(a_doc[0])
+            words = nltk.word_tokenize(' '.join(a_doc))
             for word in words:
                 if word in word_counts.keys():
                     word_counts[word] += 1
@@ -59,40 +57,42 @@ class ContentSelector:
         for event in cluster_info.keys():
             an_event = docs[event]
             for document in an_event.keys():
-                a_doc = an_event[document][1]
-
-                # construct a vector for each sentence in the document
-                for sentence in a_doc.split('\n'):
-                    if len(sentence):
+                a_doc = an_event[document]
+                for sentence in a_doc:
+                    # construct a vector for each sentence in the document
+                    if len(sentence.split()) > 1:
                         vec = []
                         vec.append(self.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         x.append(vec)
                         y.append(0)
             gold_sums = gold[event]
             for document in gold_sums.keys():
-                a_sum = an_event[document][1]
+                a_sum = gold_sums[document]
+                a_sum = re.sub('\n', ' ', a_sum)
 
                 # construct a vector for each sentence in the summary
-                for sentence in a_sum.split('\n'):
-                    if len(sentence):
+                for sentence in nltk.sent_tokenize(a_sum):
+                    if len(sentence) > 1:
                         vec = []
                         vec.append(self.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         x.append(vec)
                         y.append(1)
 
-        self.model = LinearRegression(x, y)
+        self.model = LinearRegression()
+        self.model.fit(x,y)
 
     def test(self, docs, compression):
         info = {}
         info['tf_idf'] = self.get_tf_idfs(docs)
         sents = {}
         for document in docs.keys():
-            a_doc = docs[document][1]
+            a_doc = docs[document]
 
             # construct a vector for each sentence in the document
-            for sentence in a_doc.split('\n'):
-                vec = []
-                vec.append(self.get_tf_idf_average(sentence, info["tf_idf"]))
-                sents[sentence] = self.model.predict(vec)
+            for sentence in a_doc:
+                if len(sentence.split()) > 1:
+                    vec = []
+                    vec.append(self.get_tf_idf_average(sentence, info["tf_idf"]))
+                    sents[sentence] = self.model.predict(vec)
         return sents
 
