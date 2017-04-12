@@ -1,1 +1,2 @@
-
+The data is stored in a dictionary. 
+{topic id : {doc id : [para1, para2, para3...] } }
