@@ -71,7 +71,7 @@ class ContentSelector:
 
         self.model = LinearRegression()
         self.model.fit(x,y)
-
+        '''
         x = np.asarray(x)
         forest = ExtraTreesClassifier(n_estimators=250,
                                       random_state=0)
@@ -95,7 +95,7 @@ class ContentSelector:
                 color="r", yerr=std[indices], align="center")
         plt.xticks(range(x.shape[1]), indices)
         plt.xlim([-1, x.shape[1]])
-        plt.show()
+        plt.show()'''
 
     def test(self, docs, compression):
         info = {}
