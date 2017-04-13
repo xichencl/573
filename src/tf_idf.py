@@ -31,4 +31,4 @@ def get_tf_idf_average(sent, tf_idfs):
     for word in words:
         if word in tf_idfs.keys():
             tf_idf_sum += tf_idfs[word]
-    return float(tf_idf_sum) / len(words)
+    return [tf_idf_sum, float(tf_idf_sum) / len(words)]
