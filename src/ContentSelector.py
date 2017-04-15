@@ -1,17 +1,13 @@
-import nltk
-import json
 import re
-import tf_idf
-import llr
+import warnings
 
-import numpy as np
-from sklearn.ensemble import ExtraTreesClassifier
-import matplotlib.pyplot as plt
+import nltk
+from sklearn.linear_model import LinearRegression
 
 import ling_features
-from sklearn.linear_model import LinearRegression
-from scipy.stats import linregress
-import warnings
+import llr
+import tf_idf
+
 warnings.filterwarnings("ignore")
 
 class ContentSelector:
