@@ -3,14 +3,15 @@ import json
 import re
 import tf_idf
 import llr
+import ling_features
+import preprocess
+from sklearn.linear_model import LinearRegression
+from scipy.stats import linregress
 
 import numpy as np
 from sklearn.ensemble import ExtraTreesClassifier
 import matplotlib.pyplot as plt
 
-import ling_features
-from sklearn.linear_model import LinearRegression
-from scipy.stats import linregress
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -47,6 +48,7 @@ class ContentSelector:
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.append(llr.get_weight_sum(sentence, back_counts, cluster_counts))
+                        vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
 
                         # Add additional features here
@@ -63,6 +65,7 @@ class ContentSelector:
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.append(llr.get_weight_sum(sentence, back_counts, cluster_counts))
+                        vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
 
                         # Add additional features here
@@ -71,29 +74,32 @@ class ContentSelector:
 
         self.model = LinearRegression()
         self.model.fit(x,y)
-        '''
+
         x = np.asarray(x)
         forest = ExtraTreesClassifier(n_estimators=250,
                                       random_state=0)
-
+        '''
         forest.fit(x, y)
         importances = forest.feature_importances_
         std = np.std([tree.feature_importances_ for tree in forest.estimators_],
                      axis=0)
         indices = np.argsort(importances)[::-1]
 
+        labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR', 'sent_len', 'P(cap)', '#cap', 'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ']
+        sorted_labels = []
+
         # Print the feature ranking
         print("Feature ranking:")
-
         for f in range(x.shape[1]):
-            print("%d. feature %d (%f)" % (f + 1, indices[f], importances[indices[f]]))
+            sorted_labels.append(labels[indices[f]])
+            print("%d. feature %s (%f)" % (f + 1, labels[indices[f]], importances[indices[f]]))
 
         # Plot the feature importances of the forest
         plt.figure()
         plt.title("Feature importances")
         plt.bar(range(x.shape[1]), importances[indices],
                 color="r", yerr=std[indices], align="center")
-        plt.xticks(range(x.shape[1]), indices)
+        plt.xticks(range(x.shape[1]), sorted_labels)
         plt.xlim([-1, x.shape[1]])
         plt.show()'''
 
@@ -111,6 +117,7 @@ class ContentSelector:
                     vec = []
                     vec.extend(tf_idf.get_tf_idf_average(sentence, info["tf_idf"]))
                     vec.append(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
+                    vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
 
                     # Add additional features here
