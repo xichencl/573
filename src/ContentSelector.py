@@ -3,20 +3,20 @@ import tf_idf
 import llr
 import ling_features
 import feature_select
-from sklearn.linear_model import LassoLars
 from sklearn.neural_network import MLPRegressor
+from sklearn.preprocessing import StandardScaler
 from scipy.stats import linregress
 import warnings
 import numpy as np
 import math
 import nltk
 
-warnings.filterwarnings("ignore")
 
 class ContentSelector:
     def __init__(self):
         self.model = None
         self.background_counts = None
+        self.scaler = StandardScaler()
 
     # place any code that needs access to the gold standard summaries here
     def train(self, docs, gold):
@@ -52,6 +52,7 @@ class ContentSelector:
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
+                        vec = np.array(vec)
 
                         # Add additional features here
                         x.append(vec)
@@ -70,12 +71,14 @@ class ContentSelector:
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
+                        vec = np.array(vec)
 
                         # Add additional features here
                         x.append(vec)
                         y.append(1)
 
-        x = np.asarray(x)
+        self.scaler.fit(x)
+        x = self.scaler.transform(x)
         self.model = MLPRegressor()
         self.model.fit(x, y)
         #feature_select.get_feats(x, y)
@@ -104,6 +107,8 @@ class ContentSelector:
                     vec.extend(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
                     vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
+                    vec = np.array(vec).reshape(1, -1)
+                    vec = self.scaler.transform(vec)
 
                     # Add additional features here
                     # position_mul = math.fabs(0.5 - float(index) / len(a_doc))
