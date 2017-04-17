@@ -1,10 +1,10 @@
 import re
-import tf_idf
-import llr
-import ling_features
+from features import tf_idf
+from features import llr
+from features import ling_features
+from features import kl
+from features import position
 import feature_select
-import simplify_sent
-import kl
 from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
@@ -39,6 +39,7 @@ class ContentSelector:
         gold_lengths = []
         for event in cluster_info.keys():
             an_event = docs[event]
+            first, all = position.get_positions(an_event)
             back_list, vocab = kl.get_freq_list(an_event)
             cluster_counts = llr.get_cluster_counts(an_event)
             index = 0
@@ -56,6 +57,7 @@ class ContentSelector:
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
+                        vec.extend(position.score_sent(sentence, first, all))
                         vec = np.array(vec)
 
                         # Add additional features here
@@ -77,6 +79,7 @@ class ContentSelector:
                             vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
+                            vec.extend(position.score_sent(sentence, first, all))
                             vec = np.array(vec)
 
                             # Add additional features here
@@ -91,7 +94,7 @@ class ContentSelector:
         #self.model = GridSearchCV(MLPRegressor(), parameters)
         self.model = MLPRegressor()
         self.model.fit(x, y)
-        feature_select.get_feats(x, y)
+        #feature_select.get_feats(x, y)
 
     def test(self, docs, query=None):
         info = {}
@@ -99,6 +102,7 @@ class ContentSelector:
         sents = []
         cluster_counts = llr.get_cluster_counts(docs)
         back_list, vocab = kl.get_freq_list(docs)
+        first, all = position.get_positions(docs)
         for document in docs.keys():
             a_doc = docs[document]
             index = 0
@@ -118,7 +122,7 @@ class ContentSelector:
                     vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
-
+                    vec.extend(position.score_sent(sentence, first, all))
                     vec = np.array(vec).reshape(1, -1)
                     vec = self.scaler.transform(vec)
 
