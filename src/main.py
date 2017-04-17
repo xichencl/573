@@ -1,5 +1,6 @@
 import json
 import ContentSelector
+import ContentSorter
 import ContentRealizer
 import InfoOrderer
 import sys
@@ -12,6 +13,7 @@ selector = ContentSelector.ContentSelector()
 selector.train(documents, gold)
 
 realizer = ContentRealizer.ContentRealizer()
+realizer = ContentRealizer.ContentRealizer();
 
 for event in documents.keys():
     an_event = documents[event]
