@@ -13,14 +13,22 @@ class ContentRealizer:
     #return: picked sentences
     def realize(self, sentences, length_limit):
         total_len = 0;
-        results = list();
-        for sent in sentences:
-            if total_len < length_limit:
-                text = sent[0];
+        result_indices = list();
+        #convert sentences
+        sentences = [row[0] for row in sentences];
+        tfidf = self.vectorizer.fit_transform(sentences)
 
-                if self.max_cosine_sim(text,results) < 1.0:
-                    total_len += len(text.split());
-                    results.append(text);
+        for i in range(0,len(sentences)):
+            #cannot exceed length_limit
+            if total_len >= length_limit:
+                break
+            if self.max_cosine_sim(i,result_indices,tfidf) < 1.0:
+                result_indices.append(i);
+                total_len += len(sentences[i].split());
+
+        results = list();
+        for index in result_indices:
+            results.append(sentences[index])
         return results;
 
     def stem_tokens(self, tokens):
@@ -32,18 +40,13 @@ class ContentRealizer:
     #def cosine_sim(self, text1, text2):
     #    tfidf = self.vectorizer.fit_transform([text1, text2])
     #    return ((tfidf * tfidf.T).A)[0,1]
-
-    def max_cosine_sim(self,text, results):
-        if len(results) == 0 : return 0;
-
-        _result = list(results)
-        _result.insert(0,text)
-
-        tfidf = self.vectorizer.fit_transform(_result)
+    def max_cosine_sim(self,text_index, result_indices, tfidf):
+        if len(result_indices) == 0 : return 0;
         max_sim = 0;
-
-        for i in range(1,len(_result)):
-            sim = ((tfidf * tfidf.T).A)[0,i]
+        for i in range(0,len(result_indices)):
+            #not count self
+            if text_index == i: continue
+            sim = (tfidf * tfidf.T).A[text_index, i]
             if sim > max_sim:
                 max_sim = sim;
 
