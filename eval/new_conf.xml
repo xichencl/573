@@ -1,0 +1,1014 @@
+<ROUGE_EVAL version="1.5.5">
+<EVAL ID="D0901">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0901</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0901-A.M.100.A.A</M>
+<M ID="A">D0901-A.M.100.A.C</M>
+<M ID="A">D0901-A.M.100.A.F</M>
+<M ID="A">D0901-A.M.100.A.H</M>
+<M ID="A">D0901-B.M.100.A.A</M>
+<M ID="A">D0901-B.M.100.A.C</M>
+<M ID="A">D0901-B.M.100.A.F</M>
+<M ID="A">D0901-B.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0902">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0902</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0902-A.M.100.A.A</M>
+<M ID="A">D0902-A.M.100.A.B</M>
+<M ID="A">D0902-A.M.100.A.G</M>
+<M ID="A">D0902-A.M.100.A.H</M>
+<M ID="A">D0902-B.M.100.A.A</M>
+<M ID="A">D0902-B.M.100.A.B</M>
+<M ID="A">D0902-B.M.100.A.G</M>
+<M ID="A">D0902-B.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0903">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0903</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0903-A.M.100.A.A</M>
+<M ID="A">D0903-A.M.100.A.D</M>
+<M ID="A">D0903-A.M.100.A.E</M>
+<M ID="A">D0903-A.M.100.A.G</M>
+<M ID="A">D0903-B.M.100.A.A</M>
+<M ID="A">D0903-B.M.100.A.D</M>
+<M ID="A">D0903-B.M.100.A.E</M>
+<M ID="A">D0903-B.M.100.A.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0904">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0904</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0904-A.M.100.A.A</M>
+<M ID="A">D0904-A.M.100.A.C</M>
+<M ID="A">D0904-A.M.100.A.D</M>
+<M ID="A">D0904-A.M.100.A.F</M>
+<M ID="A">D0904-B.M.100.A.A</M>
+<M ID="A">D0904-B.M.100.A.C</M>
+<M ID="A">D0904-B.M.100.A.D</M>
+<M ID="A">D0904-B.M.100.A.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0905">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0905</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0905-A.M.100.A.A</M>
+<M ID="A">D0905-A.M.100.A.D</M>
+<M ID="A">D0905-A.M.100.A.G</M>
+<M ID="A">D0905-A.M.100.A.H</M>
+<M ID="A">D0905-B.M.100.A.A</M>
+<M ID="A">D0905-B.M.100.A.D</M>
+<M ID="A">D0905-B.M.100.A.G</M>
+<M ID="A">D0905-B.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0906">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0906</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0906-A.M.100.B.A</M>
+<M ID="A">D0906-A.M.100.B.B</M>
+<M ID="A">D0906-A.M.100.B.C</M>
+<M ID="A">D0906-A.M.100.B.D</M>
+<M ID="A">D0906-B.M.100.B.A</M>
+<M ID="A">D0906-B.M.100.B.B</M>
+<M ID="A">D0906-B.M.100.B.C</M>
+<M ID="A">D0906-B.M.100.B.D</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0907">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0907</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0907-A.M.100.B.B</M>
+<M ID="A">D0907-A.M.100.B.C</M>
+<M ID="A">D0907-A.M.100.B.F</M>
+<M ID="A">D0907-A.M.100.B.H</M>
+<M ID="A">D0907-B.M.100.B.B</M>
+<M ID="A">D0907-B.M.100.B.C</M>
+<M ID="A">D0907-B.M.100.B.F</M>
+<M ID="A">D0907-B.M.100.B.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0908">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0908</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0908-A.M.100.B.B</M>
+<M ID="A">D0908-A.M.100.B.E</M>
+<M ID="A">D0908-A.M.100.B.F</M>
+<M ID="A">D0908-A.M.100.B.H</M>
+<M ID="A">D0908-B.M.100.B.B</M>
+<M ID="A">D0908-B.M.100.B.E</M>
+<M ID="A">D0908-B.M.100.B.F</M>
+<M ID="A">D0908-B.M.100.B.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0909">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0909</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0909-A.M.100.B.B</M>
+<M ID="A">D0909-A.M.100.B.E</M>
+<M ID="A">D0909-A.M.100.B.F</M>
+<M ID="A">D0909-A.M.100.B.G</M>
+<M ID="A">D0909-B.M.100.B.B</M>
+<M ID="A">D0909-B.M.100.B.E</M>
+<M ID="A">D0909-B.M.100.B.F</M>
+<M ID="A">D0909-B.M.100.B.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0910">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0910</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0910-A.M.100.B.A</M>
+<M ID="A">D0910-A.M.100.B.B</M>
+<M ID="A">D0910-A.M.100.B.E</M>
+<M ID="A">D0910-A.M.100.B.H</M>
+<M ID="A">D0910-B.M.100.B.A</M>
+<M ID="A">D0910-B.M.100.B.B</M>
+<M ID="A">D0910-B.M.100.B.E</M>
+<M ID="A">D0910-B.M.100.B.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0911">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0911</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0911-A.M.100.C.A</M>
+<M ID="A">D0911-A.M.100.C.B</M>
+<M ID="A">D0911-A.M.100.C.C</M>
+<M ID="A">D0911-A.M.100.C.E</M>
+<M ID="A">D0911-B.M.100.C.A</M>
+<M ID="A">D0911-B.M.100.C.B</M>
+<M ID="A">D0911-B.M.100.C.C</M>
+<M ID="A">D0911-B.M.100.C.E</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0912">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0912</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0912-A.M.100.C.B</M>
+<M ID="A">D0912-A.M.100.C.C</M>
+<M ID="A">D0912-A.M.100.C.D</M>
+<M ID="A">D0912-A.M.100.C.G</M>
+<M ID="A">D0912-B.M.100.C.B</M>
+<M ID="A">D0912-B.M.100.C.C</M>
+<M ID="A">D0912-B.M.100.C.D</M>
+<M ID="A">D0912-B.M.100.C.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0913">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0913</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0913-A.M.100.C.B</M>
+<M ID="A">D0913-A.M.100.C.C</M>
+<M ID="A">D0913-A.M.100.C.E</M>
+<M ID="A">D0913-A.M.100.C.H</M>
+<M ID="A">D0913-B.M.100.C.B</M>
+<M ID="A">D0913-B.M.100.C.C</M>
+<M ID="A">D0913-B.M.100.C.E</M>
+<M ID="A">D0913-B.M.100.C.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0914">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0914</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0914-A.M.100.C.C</M>
+<M ID="A">D0914-A.M.100.C.D</M>
+<M ID="A">D0914-A.M.100.C.E</M>
+<M ID="A">D0914-A.M.100.C.F</M>
+<M ID="A">D0914-B.M.100.C.C</M>
+<M ID="A">D0914-B.M.100.C.D</M>
+<M ID="A">D0914-B.M.100.C.E</M>
+<M ID="A">D0914-B.M.100.C.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0915">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0915</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0915-A.M.100.C.C</M>
+<M ID="A">D0915-A.M.100.C.F</M>
+<M ID="A">D0915-A.M.100.C.G</M>
+<M ID="A">D0915-A.M.100.C.H</M>
+<M ID="A">D0915-B.M.100.C.C</M>
+<M ID="A">D0915-B.M.100.C.F</M>
+<M ID="A">D0915-B.M.100.C.G</M>
+<M ID="A">D0915-B.M.100.C.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0916">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0916</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0916-A.M.100.C.B</M>
+<M ID="A">D0916-A.M.100.C.C</M>
+<M ID="A">D0916-A.M.100.C.E</M>
+<M ID="A">D0916-A.M.100.C.F</M>
+<M ID="A">D0916-B.M.100.C.B</M>
+<M ID="A">D0916-B.M.100.C.C</M>
+<M ID="A">D0916-B.M.100.C.E</M>
+<M ID="A">D0916-B.M.100.C.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0917">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0917</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0917-A.M.100.C.B</M>
+<M ID="A">D0917-A.M.100.C.C</M>
+<M ID="A">D0917-A.M.100.C.F</M>
+<M ID="A">D0917-A.M.100.C.G</M>
+<M ID="A">D0917-B.M.100.C.B</M>
+<M ID="A">D0917-B.M.100.C.C</M>
+<M ID="A">D0917-B.M.100.C.F</M>
+<M ID="A">D0917-B.M.100.C.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0918">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0918</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0918-A.M.100.D.A</M>
+<M ID="A">D0918-A.M.100.D.D</M>
+<M ID="A">D0918-A.M.100.D.F</M>
+<M ID="A">D0918-A.M.100.D.H</M>
+<M ID="A">D0918-B.M.100.D.A</M>
+<M ID="A">D0918-B.M.100.D.D</M>
+<M ID="A">D0918-B.M.100.D.F</M>
+<M ID="A">D0918-B.M.100.D.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0919">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0919</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0919-A.M.100.D.D</M>
+<M ID="A">D0919-A.M.100.D.F</M>
+<M ID="A">D0919-A.M.100.D.G</M>
+<M ID="A">D0919-A.M.100.D.H</M>
+<M ID="A">D0919-B.M.100.D.D</M>
+<M ID="A">D0919-B.M.100.D.F</M>
+<M ID="A">D0919-B.M.100.D.G</M>
+<M ID="A">D0919-B.M.100.D.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0920">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0920</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0920-A.M.100.D.A</M>
+<M ID="A">D0920-A.M.100.D.C</M>
+<M ID="A">D0920-A.M.100.D.D</M>
+<M ID="A">D0920-A.M.100.D.G</M>
+<M ID="A">D0920-B.M.100.D.A</M>
+<M ID="A">D0920-B.M.100.D.C</M>
+<M ID="A">D0920-B.M.100.D.D</M>
+<M ID="A">D0920-B.M.100.D.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0921">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0921</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0921-A.M.100.D.B</M>
+<M ID="A">D0921-A.M.100.D.C</M>
+<M ID="A">D0921-A.M.100.D.D</M>
+<M ID="A">D0921-A.M.100.D.H</M>
+<M ID="A">D0921-B.M.100.D.B</M>
+<M ID="A">D0921-B.M.100.D.C</M>
+<M ID="A">D0921-B.M.100.D.D</M>
+<M ID="A">D0921-B.M.100.D.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0922">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0922</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0922-A.M.100.D.A</M>
+<M ID="A">D0922-A.M.100.D.B</M>
+<M ID="A">D0922-A.M.100.D.D</M>
+<M ID="A">D0922-A.M.100.D.E</M>
+<M ID="A">D0922-B.M.100.D.A</M>
+<M ID="A">D0922-B.M.100.D.B</M>
+<M ID="A">D0922-B.M.100.D.D</M>
+<M ID="A">D0922-B.M.100.D.E</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0923">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0923</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0923-A.M.100.D.C</M>
+<M ID="A">D0923-A.M.100.D.D</M>
+<M ID="A">D0923-A.M.100.D.E</M>
+<M ID="A">D0923-A.M.100.D.G</M>
+<M ID="A">D0923-B.M.100.D.C</M>
+<M ID="A">D0923-B.M.100.D.D</M>
+<M ID="A">D0923-B.M.100.D.E</M>
+<M ID="A">D0923-B.M.100.D.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0924">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0924</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0924-A.M.100.D.A</M>
+<M ID="A">D0924-A.M.100.D.D</M>
+<M ID="A">D0924-A.M.100.D.E</M>
+<M ID="A">D0924-A.M.100.D.F</M>
+<M ID="A">D0924-B.M.100.D.A</M>
+<M ID="A">D0924-B.M.100.D.D</M>
+<M ID="A">D0924-B.M.100.D.E</M>
+<M ID="A">D0924-B.M.100.D.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0925">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0925</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0925-A.M.100.E.A</M>
+<M ID="A">D0925-A.M.100.E.E</M>
+<M ID="A">D0925-A.M.100.E.F</M>
+<M ID="A">D0925-A.M.100.E.H</M>
+<M ID="A">D0925-B.M.100.E.A</M>
+<M ID="A">D0925-B.M.100.E.E</M>
+<M ID="A">D0925-B.M.100.E.F</M>
+<M ID="A">D0925-B.M.100.E.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0926">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0926</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0926-A.M.100.E.B</M>
+<M ID="A">D0926-A.M.100.E.D</M>
+<M ID="A">D0926-A.M.100.E.E</M>
+<M ID="A">D0926-A.M.100.E.G</M>
+<M ID="A">D0926-B.M.100.E.B</M>
+<M ID="A">D0926-B.M.100.E.D</M>
+<M ID="A">D0926-B.M.100.E.E</M>
+<M ID="A">D0926-B.M.100.E.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0927">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0927</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0927-A.M.100.E.A</M>
+<M ID="A">D0927-A.M.100.E.B</M>
+<M ID="A">D0927-A.M.100.E.E</M>
+<M ID="A">D0927-A.M.100.E.G</M>
+<M ID="A">D0927-B.M.100.E.A</M>
+<M ID="A">D0927-B.M.100.E.B</M>
+<M ID="A">D0927-B.M.100.E.E</M>
+<M ID="A">D0927-B.M.100.E.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0928">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0928</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0928-A.M.100.E.A</M>
+<M ID="A">D0928-A.M.100.E.C</M>
+<M ID="A">D0928-A.M.100.E.E</M>
+<M ID="A">D0928-A.M.100.E.F</M>
+<M ID="A">D0928-B.M.100.E.A</M>
+<M ID="A">D0928-B.M.100.E.C</M>
+<M ID="A">D0928-B.M.100.E.E</M>
+<M ID="A">D0928-B.M.100.E.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0929">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0929</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0929-A.M.100.E.D</M>
+<M ID="A">D0929-A.M.100.E.E</M>
+<M ID="A">D0929-A.M.100.E.G</M>
+<M ID="A">D0929-A.M.100.E.H</M>
+<M ID="A">D0929-B.M.100.E.D</M>
+<M ID="A">D0929-B.M.100.E.E</M>
+<M ID="A">D0929-B.M.100.E.G</M>
+<M ID="A">D0929-B.M.100.E.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0930">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0930</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0930-A.M.100.F.A</M>
+<M ID="A">D0930-A.M.100.F.B</M>
+<M ID="A">D0930-A.M.100.F.E</M>
+<M ID="A">D0930-A.M.100.F.F</M>
+<M ID="A">D0930-B.M.100.F.A</M>
+<M ID="A">D0930-B.M.100.F.B</M>
+<M ID="A">D0930-B.M.100.F.E</M>
+<M ID="A">D0930-B.M.100.F.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0931">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0931</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0931-A.M.100.F.C</M>
+<M ID="A">D0931-A.M.100.F.D</M>
+<M ID="A">D0931-A.M.100.F.F</M>
+<M ID="A">D0931-A.M.100.F.G</M>
+<M ID="A">D0931-B.M.100.F.C</M>
+<M ID="A">D0931-B.M.100.F.D</M>
+<M ID="A">D0931-B.M.100.F.F</M>
+<M ID="A">D0931-B.M.100.F.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0932">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0932</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0932-A.M.100.F.B</M>
+<M ID="A">D0932-A.M.100.F.F</M>
+<M ID="A">D0932-A.M.100.F.G</M>
+<M ID="A">D0932-A.M.100.F.H</M>
+<M ID="A">D0932-B.M.100.F.B</M>
+<M ID="A">D0932-B.M.100.F.F</M>
+<M ID="A">D0932-B.M.100.F.G</M>
+<M ID="A">D0932-B.M.100.F.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0933">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0933</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0933-A.M.100.F.A</M>
+<M ID="A">D0933-A.M.100.F.B</M>
+<M ID="A">D0933-A.M.100.F.D</M>
+<M ID="A">D0933-A.M.100.F.F</M>
+<M ID="A">D0933-B.M.100.F.A</M>
+<M ID="A">D0933-B.M.100.F.B</M>
+<M ID="A">D0933-B.M.100.F.D</M>
+<M ID="A">D0933-B.M.100.F.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0934">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0934</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0934-A.M.100.G.C</M>
+<M ID="A">D0934-A.M.100.G.D</M>
+<M ID="A">D0934-A.M.100.G.G</M>
+<M ID="A">D0934-A.M.100.G.H</M>
+<M ID="A">D0934-B.M.100.G.C</M>
+<M ID="A">D0934-B.M.100.G.D</M>
+<M ID="A">D0934-B.M.100.G.G</M>
+<M ID="A">D0934-B.M.100.G.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0935">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0935</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0935-A.M.100.G.E</M>
+<M ID="A">D0935-A.M.100.G.F</M>
+<M ID="A">D0935-A.M.100.G.G</M>
+<M ID="A">D0935-A.M.100.G.H</M>
+<M ID="A">D0935-B.M.100.G.E</M>
+<M ID="A">D0935-B.M.100.G.F</M>
+<M ID="A">D0935-B.M.100.G.G</M>
+<M ID="A">D0935-B.M.100.G.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0936">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0936</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0936-A.M.100.G.D</M>
+<M ID="A">D0936-A.M.100.G.E</M>
+<M ID="A">D0936-A.M.100.G.F</M>
+<M ID="A">D0936-A.M.100.G.G</M>
+<M ID="A">D0936-B.M.100.G.D</M>
+<M ID="A">D0936-B.M.100.G.E</M>
+<M ID="A">D0936-B.M.100.G.F</M>
+<M ID="A">D0936-B.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0937">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0937</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0937-A.M.100.G.A</M>
+<M ID="A">D0937-A.M.100.G.B</M>
+<M ID="A">D0937-A.M.100.G.C</M>
+<M ID="A">D0937-A.M.100.G.G</M>
+<M ID="A">D0937-B.M.100.G.A</M>
+<M ID="A">D0937-B.M.100.G.B</M>
+<M ID="A">D0937-B.M.100.G.C</M>
+<M ID="A">D0937-B.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0938">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0938</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0938-A.M.100.G.A</M>
+<M ID="A">D0938-A.M.100.G.C</M>
+<M ID="A">D0938-A.M.100.G.E</M>
+<M ID="A">D0938-A.M.100.G.G</M>
+<M ID="A">D0938-B.M.100.G.A</M>
+<M ID="A">D0938-B.M.100.G.C</M>
+<M ID="A">D0938-B.M.100.G.E</M>
+<M ID="A">D0938-B.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0939">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0939</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0939-A.M.100.H.D</M>
+<M ID="A">D0939-A.M.100.H.E</M>
+<M ID="A">D0939-A.M.100.H.F</M>
+<M ID="A">D0939-A.M.100.H.H</M>
+<M ID="A">D0939-B.M.100.H.D</M>
+<M ID="A">D0939-B.M.100.H.E</M>
+<M ID="A">D0939-B.M.100.H.F</M>
+<M ID="A">D0939-B.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0940">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0940</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0940-A.M.100.H.B</M>
+<M ID="A">D0940-A.M.100.H.D</M>
+<M ID="A">D0940-A.M.100.H.F</M>
+<M ID="A">D0940-A.M.100.H.H</M>
+<M ID="A">D0940-B.M.100.H.B</M>
+<M ID="A">D0940-B.M.100.H.D</M>
+<M ID="A">D0940-B.M.100.H.F</M>
+<M ID="A">D0940-B.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0941">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0941</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0941-A.M.100.H.A</M>
+<M ID="A">D0941-A.M.100.H.C</M>
+<M ID="A">D0941-A.M.100.H.G</M>
+<M ID="A">D0941-A.M.100.H.H</M>
+<M ID="A">D0941-B.M.100.H.A</M>
+<M ID="A">D0941-B.M.100.H.C</M>
+<M ID="A">D0941-B.M.100.H.G</M>
+<M ID="A">D0941-B.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0942">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0942</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0942-A.M.100.H.A</M>
+<M ID="A">D0942-A.M.100.H.B</M>
+<M ID="A">D0942-A.M.100.H.C</M>
+<M ID="A">D0942-A.M.100.H.H</M>
+<M ID="A">D0942-B.M.100.H.A</M>
+<M ID="A">D0942-B.M.100.H.B</M>
+<M ID="A">D0942-B.M.100.H.C</M>
+<M ID="A">D0942-B.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0943">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0943</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0943-A.M.100.H.A</M>
+<M ID="A">D0943-A.M.100.H.D</M>
+<M ID="A">D0943-A.M.100.H.E</M>
+<M ID="A">D0943-A.M.100.H.H</M>
+<M ID="A">D0943-B.M.100.H.A</M>
+<M ID="A">D0943-B.M.100.H.D</M>
+<M ID="A">D0943-B.M.100.H.E</M>
+<M ID="A">D0943-B.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0944">
+        <PEER-ROOT>
+        /Users/mackie/PycharmProjects/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /Users/mackie/PycharmProjects/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D0944</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D0944-A.M.100.H.B</M>
+<M ID="A">D0944-A.M.100.H.C</M>
+<M ID="A">D0944-A.M.100.H.G</M>
+<M ID="A">D0944-A.M.100.H.H</M>
+<M ID="A">D0944-B.M.100.H.B</M>
+<M ID="A">D0944-B.M.100.H.C</M>
+<M ID="A">D0944-B.M.100.H.G</M>
+<M ID="A">D0944-B.M.100.H.H</M>
+        </MODELS>
+</EVAL>
+</ROUGE_EVAL>

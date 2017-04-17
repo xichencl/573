@@ -3,12 +3,16 @@ import tf_idf
 import llr
 import ling_features
 import preprocess
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LassoLars
 from scipy.stats import linregress
 import warnings
-
+import numpy as np
+import math
 import nltk
+import random
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import ExtraTreesClassifier
+import matplotlib.pyplot as plt
 warnings.filterwarnings("ignore")
 
 class ContentSelector:
@@ -35,12 +39,16 @@ class ContentSelector:
         for event in cluster_info.keys():
             an_event = docs[event]
             cluster_counts = llr.get_cluster_counts(an_event)
+            index = 0
             for document in an_event.keys():
                 a_doc = an_event[document]
                 for sentence in a_doc:
 
+                    index += 1
                     # construct a vector for each sentence in the document
+
                     if len(sentence.split()) > 1:
+
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.append(llr.get_weight_sum(sentence, back_counts, cluster_counts))
@@ -58,6 +66,7 @@ class ContentSelector:
                 # construct a vector for each sentence in the summary
                 for sentence in nltk.sent_tokenize(a_sum):
                     if len(sentence) > 1:
+
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.append(llr.get_weight_sum(sentence, back_counts, cluster_counts))
@@ -68,20 +77,21 @@ class ContentSelector:
                         x.append(vec)
                         y.append(1)
 
-        self.model = LinearRegression()
-        self.model.fit(x,y)
-
         x = np.asarray(x)
+        self.model = LassoLars()
+        self.model.fit(x, y)
+
+        '''
         forest = ExtraTreesClassifier(n_estimators=250,
                                       random_state=0)
-        '''
+        
         forest.fit(x, y)
         importances = forest.feature_importances_
         std = np.std([tree.feature_importances_ for tree in forest.estimators_],
                      axis=0)
         indices = np.argsort(importances)[::-1]
 
-        labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR', 'sent_len', 'P(cap)', '#cap', 'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ']
+        labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR', 'sent_len', 'P(cap)', '#cap', 'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ', 'vec_dist']
         sorted_labels = []
 
         # Print the feature ranking
@@ -102,14 +112,18 @@ class ContentSelector:
     def test(self, docs, compression):
         info = {}
         info['tf_idf'] = tf_idf.get_tf_idfs(docs)
-        sents = {}
+        sents = []
         cluster_counts = llr.get_cluster_counts(docs)
+
         for document in docs.keys():
             a_doc = docs[document]
-
+            index = 0
             # construct a vector for each sentence in the document
             for sentence in a_doc:
+                index += 1
+                sentence = re.sub('\n', ' ', sentence)
                 if len(sentence.split()) > 1:
+
                     vec = []
                     vec.extend(tf_idf.get_tf_idf_average(sentence, info["tf_idf"]))
                     vec.append(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
@@ -117,6 +131,7 @@ class ContentSelector:
                     vec = ling_features.add_feats(docs, sentence, vec)
 
                     # Add additional features here
-                    sents[sentence] = self.model.predict(vec)
-        return sents
+                    # position_mul = math.fabs(0.5 - float(index) / len(a_doc))
+                    sents.append((sentence, self.model.predict(vec)))
+        return sorted(sents, key=lambda x: x[1], reverse=True)
 

@@ -1,7 +1,7 @@
 import nltk
 import math
 
-tagset = ['CC', 'CD', 'DT', 'EX', 'FW', 'IN', 'JJ', 'JJR', 'JJS', 'LS', 'MD', 'NN', 'NNS', 'NNP', 'NNPS', 'PDT', 'POS', 'PRP', 'PRP$', 'RB', 'RBR', 'RBS', 'RP', 'SYM', 'TO', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'WDT', 'WP', 'WP$', 'WRB']
+tagset = ['CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ']
 
 # add linguistic information like POS and named entity probabilities
 def add_feats(docs, sent, vec):
@@ -21,9 +21,9 @@ def add_feats(docs, sent, vec):
             pos_counts[pair[1]] = 1
     for tag in tagset:
         if tag in pos_counts.keys():
-            vec.append(float(pos_counts[tag])/len(pos))
+            #vec.append(float(pos_counts[tag])/len(pos))
             vec.append(pos_counts[tag])
         else:
-            vec.append(0)
+            #vec.append(0)
             vec.append(0)
     return vec
