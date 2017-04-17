@@ -12,8 +12,8 @@ def get_feats(x, y):
                  axis=0)
     indices = np.argsort(importances)[::-1]
 
-    labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR_sum', 'LLR', 'sent_len', 'P(cap)', '#cap', 'CC', 'DT', 'IN', 'JJ', 'NN',
-              'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ']
+    labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR_sum', 'LLR', 'sent_len', 'quote', 'P(num)', 'P(cap)', 'P(cap_word)', '#cap_word',
+              'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ', 'sentiment', 'KL', 'KL_rev']
     sorted_labels = []
 
     # Print the feature ranking

@@ -1,5 +1,7 @@
 import nltk
 import math
+import re
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 tagset = ['CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ']
 
@@ -11,6 +13,12 @@ def add_feats(docs, sent, vec):
     for word in words[1:]:
         if word.istitle():
             num_cap += 1
+    nums = re.findall('[0-9]', sent)
+    caps = re.findall('[A-Z]', sent)
+    has_quote = bool('"' in sent)
+    vec.append(int(has_quote))
+    vec.append(float(len(nums)) / len(sent))
+    vec.append(float(len(caps)) / len(sent))
     vec.append(float(num_cap)/len(words))
     vec.append(num_cap)
     pos_counts = {}
@@ -26,4 +34,8 @@ def add_feats(docs, sent, vec):
         else:
             #vec.append(0)
             vec.append(0)
+
+    sid = SentimentIntensityAnalyzer()
+    ss = sid.polarity_scores(sent)
+    vec.append(ss['compound'])
     return vec
