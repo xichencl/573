@@ -2,17 +2,15 @@ import re
 import tf_idf
 import llr
 import ling_features
-import preprocess
+import feature_select
 from sklearn.linear_model import LassoLars
+from sklearn.neural_network import MLPRegressor
 from scipy.stats import linregress
 import warnings
 import numpy as np
 import math
 import nltk
-import random
-from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import ExtraTreesClassifier
-import matplotlib.pyplot as plt
+
 warnings.filterwarnings("ignore")
 
 class ContentSelector:
@@ -51,7 +49,7 @@ class ContentSelector:
 
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
-                        vec.append(llr.get_weight_sum(sentence, back_counts, cluster_counts))
+                        vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
 
@@ -69,7 +67,7 @@ class ContentSelector:
 
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
-                        vec.append(llr.get_weight_sum(sentence, back_counts, cluster_counts))
+                        vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
 
@@ -78,36 +76,9 @@ class ContentSelector:
                         y.append(1)
 
         x = np.asarray(x)
-        self.model = LassoLars()
+        self.model = MLPRegressor()
         self.model.fit(x, y)
-
-        '''
-        forest = ExtraTreesClassifier(n_estimators=250,
-                                      random_state=0)
-        
-        forest.fit(x, y)
-        importances = forest.feature_importances_
-        std = np.std([tree.feature_importances_ for tree in forest.estimators_],
-                     axis=0)
-        indices = np.argsort(importances)[::-1]
-
-        labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR', 'sent_len', 'P(cap)', '#cap', 'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ', 'vec_dist']
-        sorted_labels = []
-
-        # Print the feature ranking
-        print("Feature ranking:")
-        for f in range(x.shape[1]):
-            sorted_labels.append(labels[indices[f]])
-            print("%d. feature %s (%f)" % (f + 1, labels[indices[f]], importances[indices[f]]))
-
-        # Plot the feature importances of the forest
-        plt.figure()
-        plt.title("Feature importances")
-        plt.bar(range(x.shape[1]), importances[indices],
-                color="r", yerr=std[indices], align="center")
-        plt.xticks(range(x.shape[1]), sorted_labels)
-        plt.xlim([-1, x.shape[1]])
-        plt.show()'''
+        #feature_select.get_feats(x, y)
 
     def test(self, docs, compression):
         info = {}
@@ -119,14 +90,18 @@ class ContentSelector:
             a_doc = docs[document]
             index = 0
             # construct a vector for each sentence in the document
+            if len(a_doc) > 1:
+                sents.append((a_doc[1], 1))
+            else:
+                sents.append((a_doc[0], 1))
             for sentence in a_doc:
                 index += 1
                 sentence = re.sub('\n', ' ', sentence)
-                if len(sentence.split()) > 1:
+                if len(sentence.split()) > 8:
 
                     vec = []
                     vec.extend(tf_idf.get_tf_idf_average(sentence, info["tf_idf"]))
-                    vec.append(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
+                    vec.extend(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
                     vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
 
@@ -134,4 +109,3 @@ class ContentSelector:
                     # position_mul = math.fabs(0.5 - float(index) / len(a_doc))
                     sents.append((sentence, self.model.predict(vec)))
         return sorted(sents, key=lambda x: x[1], reverse=True)
-

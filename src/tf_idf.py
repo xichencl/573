@@ -1,6 +1,8 @@
 import nltk
 import math
 
+stops = set(nltk.corpus.stopwords.words('english'))
+
 # return a dictionary with the tf*idfs for a set of documents
 def get_tf_idfs(docs):
     tf_idfs = {}
@@ -25,10 +27,14 @@ def get_tf_idfs(docs):
         tf_idfs[key] = word_counts[key] * math.log(float(len(docs)) / doc_counts[key])
     return tf_idfs
 
+
 def get_tf_idf_average(sent, tf_idfs):
-    tf_idf_sum = 0
+    stop_sum = 0
     words = nltk.word_tokenize(sent)
+    non_stops = 0
     for word in words:
         if word in tf_idfs.keys():
-            tf_idf_sum += tf_idfs[word]
-    return [tf_idf_sum, float(tf_idf_sum) / len(words)]
+            if word not in stops:
+                non_stops += 1
+                stop_sum += tf_idfs[word]
+    return [stop_sum, float(stop_sum) / len(words)]

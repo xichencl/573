@@ -1,6 +1,7 @@
 import math
 import nltk
 
+stops = set(nltk.corpus.stopwords.words('english'))
 
 def get_back_counts(all_docs):
     background_counts = {}
@@ -32,6 +33,7 @@ def get_cluster_counts(cluster):
 
 def get_weight_sum(sentence, background_c, cluster_c):
     sent_sum = 0
+    non_stops = 0
     words = nltk.word_tokenize(sentence)
     for word in words:
         if word in cluster_c.keys() and word in background_c.keys():
@@ -43,6 +45,9 @@ def get_weight_sum(sentence, background_c, cluster_c):
             l_one = p ** (k_one * (1 - p)**(n_one - k_one))
             l_two = p ** (k_two * (1 - p)**(n_two - k_two))
             final_log = -math.log(l_one) - math.log(l_two)
-            if final_log > 10:
-                sent_sum += float(1)/len(words)
-    return sent_sum
+            if word not in stops:
+                if final_log > 10:
+                    sent_sum += 1
+                non_stops += 1
+
+    return [sent_sum, float(sent_sum)/non_stops]
