@@ -18,7 +18,7 @@ for event in documents.keys():
     an_event = documents[event]
     results = selector.test(an_event, 10)
     sorted_result = sorter.sort(results);
-    picked = realizer.realize(results, 100)
+    picked = realizer.realize(sorted_result, 100)
     summary = re.sub('\W+', ' ', ' '.join(picked))
     out = open('/Users/mackie/PycharmProjects/573/outputs/D2/' + event[:-1], 'w')
     out.write(summary)
