@@ -1,4 +1,4 @@
-#!/opt/perl/bin/perl -w
+#!/Users/mackie/perl5/perlbrew/perls/perl-5.16.0/bin/perl -w
 # Version:     ROUGE v1.5.5
 # Date:        05/26/2005,05/19/2005,04/26/2005,04/03/2005,10/28/2004,10/25/2004,10/21/2004
 # Author:      Chin-Yew Lin

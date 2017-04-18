@@ -1,21 +1,96 @@
 <ROUGE_EVAL version="1.5.5">
-<EVAL ID="D1001-A.M.100.A">
+<EVAL ID="D0901">
 <PEER-ROOT>
 /Users/mackie/PycharmProjects/573/outputs/D2
 </PEER-ROOT>
 <MODEL-ROOT>
-/Users/mackie/PycharmProjects/573/eval/devtest
+/Users/mackie/PycharmProjects/573/eval/training
 </MODEL-ROOT>
 <INPUT-FORMAT TYPE="SPL">
 </INPUT-FORMAT>
 <PEERS>
-<P ID="1">D1001-A.M.100.A.1</P>
+<P ID="1">D0901</P>
 </PEERS>
 <MODELS>
-<M ID="A">D1001-A.M.100.A.A</M>
-<M ID="B">D1001-A.M.100.A.B</M>
-<M ID="F">D1001-A.M.100.A.F</M>
-<M ID="H">D1001-A.M.100.A.H</M>
+<M ID="A">D0901-A.M.100.A.A</M>
+<M ID="C">D0901-A.M.100.A.C</M>
+<M ID="F">D0901-A.M.100.A.F</M>
+<M ID="H">D0901-A.M.100.A.H</M>
+<M ID="BA">D0901-B.M.100.A.A</M>
+<M ID="BC">D0901-B.M.100.A.C</M>
+<M ID="BF">D0901-B.M.100.A.F</M>
+<M ID="BH">D0901-B.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0902">
+<PEER-ROOT>
+/Users/mackie/PycharmProjects/573/outputs/D2
+</PEER-ROOT>
+<MODEL-ROOT>
+/Users/mackie/PycharmProjects/573/eval/training
+</MODEL-ROOT>
+<INPUT-FORMAT TYPE="SPL">
+</INPUT-FORMAT>
+<PEERS>
+<P ID="1">D0902</P>
+</PEERS>
+<MODELS>
+<M ID="A">D0902-A.M.100.A.A</M>
+<M ID="C">D0902-A.M.100.A.B</M>
+<M ID="F">D0902-A.M.100.A.G</M>
+<M ID="H">D0902-A.M.100.A.H</M>
+<M ID="BA">D0902-B.M.100.A.A</M>
+<M ID="BC">D0902-B.M.100.A.B</M>
+<M ID="BF">D0902-B.M.100.A.G</M>
+<M ID="BH">D0902-B.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D0903">
+<PEER-ROOT>
+/Users/mackie/PycharmProjects/573/outputs/D2
+</PEER-ROOT>
+<MODEL-ROOT>
+/Users/mackie/PycharmProjects/573/eval/training
+</MODEL-ROOT>
+<INPUT-FORMAT TYPE="SPL">
+</INPUT-FORMAT>
+<PEERS>
+<P ID="1">D0903</P>
+</PEERS>
+<MODELS>
+<M ID="A">D0903-A.M.100.A.A</M>
+<M ID="C">D0903-A.M.100.A.D</M>
+<M ID="F">D0903-A.M.100.A.E</M>
+<M ID="H">D0903-A.M.100.A.G</M>
+<M ID="BA">D0903-B.M.100.A.A</M>
+<M ID="BC">D0903-B.M.100.A.D</M>
+<M ID="BF">D0903-B.M.100.A.E</M>
+<M ID="BH">D0903-B.M.100.A.G</M>
+</MODELS>
+</EVAL>
+
+<EVAL ID="D0904">
+<PEER-ROOT>
+/Users/mackie/PycharmProjects/573/outputs/D2
+</PEER-ROOT>
+<MODEL-ROOT>
+/Users/mackie/PycharmProjects/573/eval/training
+</MODEL-ROOT>
+<INPUT-FORMAT TYPE="SPL">
+</INPUT-FORMAT>
+<PEERS>
+<P ID="1">D0902</P>
+</PEERS>
+<MODELS>
+<M ID="A">D0902-A.M.100.A.A</M>
+<M ID="C">D0902-A.M.100.A.B</M>
+<M ID="F">D0902-A.M.100.A.G</M>
+<M ID="H">D0902-A.M.100.A.H</M>
+<M ID="BA">D0902-B.M.100.A.A</M>
+<M ID="BC">D0902-B.M.100.A.B</M>
+<M ID="BF">D0902-B.M.100.A.G</M>
+<M ID="BH">D0902-B.M.100.A.H</M>
 </MODELS>
 </EVAL>
 </ROUGE_EVAL>
+

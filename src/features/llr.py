@@ -44,10 +44,12 @@ def get_weight_sum(sentence, background_c, cluster_c):
             p = float((k_one + k_two))/(n_one + n_two)
             l_one = p ** (k_one * (1 - p)**(n_one - k_one))
             l_two = p ** (k_two * (1 - p)**(n_two - k_two))
-            final_log = -math.log(l_one) - math.log(l_two)
+            try:
+                final_log = -math.log(l_one) - math.log(l_two)
+            except ValueError:
+                final_log = 0
             if word not in stops:
                 if final_log > 10:
                     sent_sum += 1
                 non_stops += 1
-
     return [sent_sum, float(sent_sum)/non_stops]

@@ -19,6 +19,17 @@ class ContentSelector:
         self.background_counts = None
         self.scaler = StandardScaler()
 
+    def vectorize(self, sentence, cluster_info, event, an_event, back_counts, cluster_counts, back_list, vocab, first, all):
+        vec = []
+        vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
+        vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
+        vec.append(len(sentence.split()))
+        vec = ling_features.add_feats(an_event, sentence, vec)
+        vec.extend(kl.get_kl(sentence, back_list, vocab))
+        vec.extend(position.score_sent(sentence, first, all))
+        vec = np.array(vec)
+        return vec
+
     # place any code that needs access to the gold standard summaries here
     def train(self, docs, gold):
 
@@ -33,24 +44,25 @@ class ContentSelector:
         back_counts = llr.get_back_counts(docs)
         self.background_counts = back_counts
 
+        event_ind = 1
         # process sentences in each document of each cluster
         x = []
         y = []
-        gold_lengths = []
         for event in cluster_info.keys():
+            print('Processing Cluster ' + str(event_ind) + '/' + str(len(cluster_info.keys())))
+            event_ind += 1
             an_event = docs[event]
             first, all = position.get_positions(an_event)
             back_list, vocab = kl.get_freq_list(an_event)
             cluster_counts = llr.get_cluster_counts(an_event)
-            index = 0
             for document in an_event.keys():
                 a_doc = an_event[document]
                 for sentence in a_doc:
+                    sentence = re.sub('\n', ' ', sentence)
 
-                    index += 1
                     # construct a vector for each sentence in the document
 
-                    if len(sentence.split()) > 1:
+                    if 7 < len(sentence.split()) < 22:
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
@@ -59,20 +71,20 @@ class ContentSelector:
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
                         vec.extend(position.score_sent(sentence, first, all))
                         vec = np.array(vec)
-
                         # Add additional features here
                         x.append(vec)
                         y.append(0)
             gold_sums = gold[event]
             for document in gold_sums.keys():
-                if document[6] == 'A':
+                if len(document) < 6 or document[6] == 'A':
                     a_sum = gold_sums[document]
+                    if isinstance(a_sum, list):
+                        a_sum = ' '.join(a_sum)
                     a_sum = re.sub('\n', ' ', a_sum)
-
                     # construct a vector for each sentence in the summary
-                    for sentence in nltk.sent_tokenize(a_sum):
+                    sents = nltk.sent_tokenize(a_sum)
+                    for sentence in sents:
                         if len(sentence) > 1:
-                            gold_lengths.append(len(sentence.split()))
                             vec = []
                             vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                             vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
@@ -81,22 +93,23 @@ class ContentSelector:
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
                             vec.extend(position.score_sent(sentence, first, all))
                             vec = np.array(vec)
-
                             # Add additional features here
                             x.append(vec)
                             y.append(1)
         self.scaler.fit(x)
         x = self.scaler.transform(x)
 
-        #parameters = {'alpha': 10.0 ** -np.arange(1, 7), 'hidden_layer_sizes': [(100,), (100, 100), (50, 50), (100, 50), (50, 100)],
-        #             'activation': ['identity', 'logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam']}
+        #parameters = {'alpha': 10.0 ** -np.arange(1, 7), 'activation': ['identity', 'logistic', 'tanh', 'relu'],
+        #              'solver': ['lbfgs', 'sgd', 'adam']}
 
         #self.model = GridSearchCV(MLPRegressor(), parameters)
         self.model = MLPRegressor()
         self.model.fit(x, y)
+        #print(self.model)
         #feature_select.get_feats(x, y)
 
     def test(self, docs, query=None):
+        print('Testing')
         info = {}
         info['tf_idf'] = tf_idf.get_tf_idfs(docs)
         sents = []
