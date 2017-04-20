@@ -1,10 +1,10 @@
 <ROUGE_EVAL version="1.5.5">
 <EVAL ID="D0901">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -20,10 +20,10 @@
 </EVAL>
 <EVAL ID="D0902">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -39,10 +39,10 @@
 </EVAL>
 <EVAL ID="D0903">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -58,10 +58,10 @@
 </EVAL>
 <EVAL ID="D0904">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -77,10 +77,10 @@
 </EVAL>
 <EVAL ID="D0905">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -96,10 +96,10 @@
 </EVAL>
 <EVAL ID="D0906">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -115,10 +115,10 @@
 </EVAL>
 <EVAL ID="D0907">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -134,10 +134,10 @@
 </EVAL>
 <EVAL ID="D0908">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -153,10 +153,10 @@
 </EVAL>
 <EVAL ID="D0909">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -172,10 +172,10 @@
 </EVAL>
 <EVAL ID="D0910">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -191,10 +191,10 @@
 </EVAL>
 <EVAL ID="D0911">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -210,10 +210,10 @@
 </EVAL>
 <EVAL ID="D0912">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -229,10 +229,10 @@
 </EVAL>
 <EVAL ID="D0913">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -248,10 +248,10 @@
 </EVAL>
 <EVAL ID="D0914">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -267,10 +267,10 @@
 </EVAL>
 <EVAL ID="D0915">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -286,10 +286,10 @@
 </EVAL>
 <EVAL ID="D0916">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -305,10 +305,10 @@
 </EVAL>
 <EVAL ID="D0917">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -324,10 +324,10 @@
 </EVAL>
 <EVAL ID="D0918">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -343,10 +343,10 @@
 </EVAL>
 <EVAL ID="D0919">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -362,10 +362,10 @@
 </EVAL>
 <EVAL ID="D0920">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -381,10 +381,10 @@
 </EVAL>
 <EVAL ID="D0921">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -400,10 +400,10 @@
 </EVAL>
 <EVAL ID="D0922">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -419,10 +419,10 @@
 </EVAL>
 <EVAL ID="D0923">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -438,10 +438,10 @@
 </EVAL>
 <EVAL ID="D0924">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -457,10 +457,10 @@
 </EVAL>
 <EVAL ID="D0925">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -476,10 +476,10 @@
 </EVAL>
 <EVAL ID="D0926">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -495,10 +495,10 @@
 </EVAL>
 <EVAL ID="D0927">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -514,10 +514,10 @@
 </EVAL>
 <EVAL ID="D0928">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -533,10 +533,10 @@
 </EVAL>
 <EVAL ID="D0929">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -552,10 +552,10 @@
 </EVAL>
 <EVAL ID="D0930">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -571,10 +571,10 @@
 </EVAL>
 <EVAL ID="D0931">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -590,10 +590,10 @@
 </EVAL>
 <EVAL ID="D0932">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -609,10 +609,10 @@
 </EVAL>
 <EVAL ID="D0933">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -628,10 +628,10 @@
 </EVAL>
 <EVAL ID="D0934">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -647,10 +647,10 @@
 </EVAL>
 <EVAL ID="D0935">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -666,10 +666,10 @@
 </EVAL>
 <EVAL ID="D0936">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -685,10 +685,10 @@
 </EVAL>
 <EVAL ID="D0937">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -704,10 +704,10 @@
 </EVAL>
 <EVAL ID="D0938">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -723,10 +723,10 @@
 </EVAL>
 <EVAL ID="D0939">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -742,10 +742,10 @@
 </EVAL>
 <EVAL ID="D0940">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -761,10 +761,10 @@
 </EVAL>
 <EVAL ID="D0941">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -780,10 +780,10 @@
 </EVAL>
 <EVAL ID="D0942">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -799,10 +799,10 @@
 </EVAL>
 <EVAL ID="D0943">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -818,10 +818,10 @@
 </EVAL>
 <EVAL ID="D0944">
         <PEER-ROOT>
-        /Users/mackie/PycharmProjects/573/outputs/D2
+        /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /Users/mackie/PycharmProjects/573/eval/training
+        /home2/mblac6/573/573/eval/training
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -834,5 +834,725 @@
 <M ID="A">D0944-A.M.100.H.G</M>
 <M ID="A">D0944-A.M.100.H.H</M>
         </MODELS>
+</EVAL>
+<EVAL ID="Group_291">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_291</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_291.200</M>
+<M ID="A">Group_291.50</M>
+<M ID="A">Group_291.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_814">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_814</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_814.200</M>
+<M ID="A">Group_814.50</M>
+<M ID="A">Group_814.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_202">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_202</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_202.200</M>
+<M ID="A">Group_202.50</M>
+<M ID="A">Group_202.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_812">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_812</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_812.200</M>
+<M ID="A">Group_812.50</M>
+<M ID="A">Group_812.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_1332">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_1332</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_1332.200</M>
+<M ID="A">Group_1332.50</M>
+<M ID="A">Group_1332.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_841">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_841</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_841.200</M>
+<M ID="A">Group_841.50</M>
+<M ID="A">Group_841.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_54">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_54</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_54.200</M>
+<M ID="A">Group_54.50</M>
+<M ID="A">Group_54.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_1018">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_1018</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_1018.200</M>
+<M ID="A">Group_1018.50</M>
+<M ID="A">Group_1018.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_203">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_203</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_203.200</M>
+<M ID="A">Group_203.50</M>
+<M ID="A">Group_203.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_1014">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_1014</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_1014.200</M>
+<M ID="A">Group_1014.50</M>
+<M ID="A">Group_1014.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_241">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_241</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_241.200</M>
+<M ID="A">Group_241.50</M>
+<M ID="A">Group_241.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_46">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_46</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_46.200</M>
+<M ID="A">Group_46.50</M>
+<M ID="A">Group_46.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_885">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_885</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_885.200</M>
+<M ID="A">Group_885.50</M>
+<M ID="A">Group_885.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_551">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_551</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_551.200</M>
+<M ID="A">Group_551.50</M>
+<M ID="A">Group_551.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_2">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_2</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_2.200</M>
+<M ID="A">Group_2.50</M>
+<M ID="A">Group_2.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_522">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_522</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_522.200</M>
+<M ID="A">Group_522.50</M>
+<M ID="A">Group_522.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_1197">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_1197</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_1197.200</M>
+<M ID="A">Group_1197.50</M>
+<M ID="A">Group_1197.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_112">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_112</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_112.200</M>
+<M ID="A">Group_112.50</M>
+<M ID="A">Group_112.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_64">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_64</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_64.200</M>
+<M ID="A">Group_64.50</M>
+<M ID="A">Group_64.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_133">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_133</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_133.200</M>
+<M ID="A">Group_133.50</M>
+<M ID="A">Group_133.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_881">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_881</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_881.200</M>
+<M ID="A">Group_881.50</M>
+<M ID="A">Group_881.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_125">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_125</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_125.200</M>
+<M ID="A">Group_125.50</M>
+<M ID="A">Group_125.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_661">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_661</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_661.200</M>
+<M ID="A">Group_661.50</M>
+<M ID="A">Group_661.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_1523">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_1523</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_1523.200</M>
+<M ID="A">Group_1523.50</M>
+<M ID="A">Group_1523.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_61">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_61</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_61.200</M>
+<M ID="A">Group_61.50</M>
+<M ID="A">Group_61.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_883">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_883</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_883.200</M>
+<M ID="A">Group_883.50</M>
+<M ID="A">Group_883.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_971">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_971</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_971.200</M>
+<M ID="A">Group_971.50</M>
+<M ID="A">Group_971.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_827">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_827</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_827.200</M>
+<M ID="A">Group_827.50</M>
+<M ID="A">Group_827.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_199">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_199</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_199.200</M>
+<M ID="A">Group_199.50</M>
+<M ID="A">Group_199.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_85">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_85</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_85.200</M>
+<M ID="A">Group_85.50</M>
+<M ID="A">Group_85.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_610">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_610</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_610.200</M>
+<M ID="A">Group_610.50</M>
+<M ID="A">Group_610.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_1190">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_1190</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_1190.200</M>
+<M ID="A">Group_1190.50</M>
+<M ID="A">Group_1190.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_60">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_60</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_60.200</M>
+<M ID="A">Group_60.50</M>
+<M ID="A">Group_60.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_62">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_62</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_62.200</M>
+<M ID="A">Group_62.50</M>
+<M ID="A">Group_62.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_323">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_323</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_323.200</M>
+<M ID="A">Group_323.50</M>
+<M ID="A">Group_323.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_994">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_994</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_994.200</M>
+<M ID="A">Group_994.50</M>
+<M ID="A">Group_994.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_398">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_398</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_398.200</M>
+<M ID="A">Group_398.50</M>
+<M ID="A">Group_398.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_265">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_265</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_265.200</M>
+<M ID="A">Group_265.50</M>
+<M ID="A">Group_265.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_310">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_310</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_310.200</M>
+<M ID="A">Group_310.50</M>
+<M ID="A">Group_310.100</M>
+</MODELS>
+</EVAL>
+<EVAL ID="Group_447">
+            <PEER-ROOT>
+            /home2/mblac6/573/573/outputs/D2
+            </PEER-ROOT>
+            <MODEL-ROOT>
+            /home2/mblac6/573/573/eval/training
+            </MODEL-ROOT>
+            <INPUT-FORMAT TYPE="SPL">
+            </INPUT-FORMAT>
+            <PEERS>
+            <P ID="1">Group_447</P>
+            </PEERS>
+            <MODELS>
+<M ID="A">Group_447.200</M>
+<M ID="A">Group_447.50</M>
+<M ID="A">Group_447.100</M>
+</MODELS>
 </EVAL>
 </ROUGE_EVAL>

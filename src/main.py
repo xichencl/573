@@ -1,6 +1,5 @@
 import json
 import ContentSelector
-import ContentSorter
 import ContentRealizer
 import sys
 import re
@@ -12,14 +11,18 @@ selector = ContentSelector.ContentSelector()
 selector.train(documents, gold)
 
 realizer = ContentRealizer.ContentRealizer()
-sorter = ContentSorter.ContentSorter();
 
+index = 0
 for event in documents.keys():
+    index += 1
     an_event = documents[event]
+    print("Testing " + str(index) + '/' + str(len(documents.keys())))
     results = selector.test(an_event, 10)
-    sorted_result = sorter.sort(results);
-    picked = realizer.realize(sorted_result, 100)
+    picked = realizer.realize(results, 100)
     summary = re.sub('\W+', ' ', ' '.join(picked))
-    out = open('/Users/mackie/PycharmProjects/573/outputs/D2/' + event[:-1], 'w')
+    if 'Group' in event:
+        out = open('/home2/mblac6/573/573/outputs/D2/' + event, 'w')
+    else:
+        out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1], 'w')
     out.write(summary)
 

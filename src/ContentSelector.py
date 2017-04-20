@@ -3,8 +3,10 @@ from features import tf_idf
 from features import llr
 from features import ling_features
 from features import kl
+from features import kl_bigrams
 from features import position
 import feature_select
+import eval
 from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
@@ -37,7 +39,6 @@ class ContentSelector:
         cluster_info = {}
         for event in docs.keys():
             an_event = docs[event]
-
             tf_idfs = tf_idf.get_tf_idfs(an_event)
             cluster_info[event] = {}
             cluster_info[event]["tf_idf"] = tf_idfs
@@ -49,11 +50,25 @@ class ContentSelector:
         x = []
         y = []
         for event in cluster_info.keys():
+
+            all_sums = ''
+            for document in gold[event].keys():
+                if len(document) < 6 or document[6] == 'A':
+                    a_sum = gold[event][document]
+                    if isinstance(a_sum, list):
+                        a_sum = ' '.join(a_sum)
+                    a_sum = re.sub('\n', ' ', a_sum)
+                    all_sums += a_sum + ' '
+            sum_words = nltk.word_tokenize(all_sums)
+            sum_bigs = list(nltk.ngrams(sum_words, 2))
+
+
             print('Processing Cluster ' + str(event_ind) + '/' + str(len(cluster_info.keys())))
             event_ind += 1
             an_event = docs[event]
             first, all = position.get_positions(an_event)
             back_list, vocab = kl.get_freq_list(an_event)
+            back_list2, vocab2 = kl_bigrams.get_freq_list(an_event)
             cluster_counts = llr.get_cluster_counts(an_event)
             for document in an_event.keys():
                 a_doc = an_event[document]
@@ -61,19 +76,19 @@ class ContentSelector:
                     sentence = re.sub('\n', ' ', sentence)
 
                     # construct a vector for each sentence in the document
-
-                    if 7 < len(sentence.split()) < 22:
+                    if 1 < len(sentence.split()):
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
+                        vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                         vec.extend(position.score_sent(sentence, first, all))
                         vec = np.array(vec)
                         # Add additional features here
                         x.append(vec)
-                        y.append(0)
+                        y.append(eval.get_rouge2(sentence, sum_bigs))
             gold_sums = gold[event]
             for document in gold_sums.keys():
                 if len(document) < 6 or document[6] == 'A':
@@ -91,14 +106,15 @@ class ContentSelector:
                             vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
+                            vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                             vec.extend(position.score_sent(sentence, first, all))
                             vec = np.array(vec)
                             # Add additional features here
                             x.append(vec)
-                            y.append(1)
+                            y.append(eval.get_rouge2(sentence, sum_bigs))
         self.scaler.fit(x)
         x = self.scaler.transform(x)
-
+        y = np.array(y) / max(y)
         #parameters = {'alpha': 10.0 ** -np.arange(1, 7), 'activation': ['identity', 'logistic', 'tanh', 'relu'],
         #              'solver': ['lbfgs', 'sgd', 'adam']}
 
@@ -106,15 +122,15 @@ class ContentSelector:
         self.model = MLPRegressor()
         self.model.fit(x, y)
         #print(self.model)
-        #feature_select.get_feats(x, y)
+        feature_select.get_feats(x, y)
 
     def test(self, docs, query=None):
-        print('Testing')
         info = {}
         info['tf_idf'] = tf_idf.get_tf_idfs(docs)
         sents = []
         cluster_counts = llr.get_cluster_counts(docs)
         back_list, vocab = kl.get_freq_list(docs)
+        back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
         first, all = position.get_positions(docs)
         for document in docs.keys():
             a_doc = docs[document]
@@ -135,11 +151,11 @@ class ContentSelector:
                     vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
+                    vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                     vec.extend(position.score_sent(sentence, first, all))
                     vec = np.array(vec).reshape(1, -1)
                     vec = self.scaler.transform(vec)
 
                     # Add additional features here
-                    # position_mul = math.fabs(0.5 - float(index) / len(a_doc))
                     sents.append((sentence, self.model.predict(vec)))
         return sorted(sents, key=lambda x: x[1], reverse=True)
