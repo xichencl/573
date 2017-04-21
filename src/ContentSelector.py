@@ -8,6 +8,7 @@ from features import position
 import feature_select
 import eval
 from sklearn.neural_network import MLPRegressor
+from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
 import numpy as np
@@ -112,14 +113,15 @@ class ContentSelector:
                             # Add additional features here
                             x.append(vec)
                             y.append(eval.get_rouge2(sentence, sum_bigs))
-        self.scaler.fit(x)
-        x = self.scaler.transform(x)
+        #self.scaler.fit(x)
+        #x = self.scaler.transform(x)
         y = np.array(y) / max(y)
         #parameters = {'alpha': 10.0 ** -np.arange(1, 7), 'activation': ['identity', 'logistic', 'tanh', 'relu'],
         #              'solver': ['lbfgs', 'sgd', 'adam']}
 
         #self.model = GridSearchCV(MLPRegressor(), parameters)
-        self.model = MLPRegressor()
+        #self.model = MLPRegressor()
+        self.model = LinearRegression()
         self.model.fit(x, y)
         #print(self.model)
         feature_select.get_feats(x, y)
@@ -135,13 +137,13 @@ class ContentSelector:
         for document in docs.keys():
             a_doc = docs[document]
             index = 0
-            if len(a_doc) > 1:
-                sents.append((a_doc[1], 1))
-            else:
-                sents.append((a_doc[0], 1))
+            #if len(a_doc) > 1:
+            #    sents.append((a_doc[1], 1))
+            #else:
+            #    sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
-            '''for sentence in a_doc:
+            for sentence in a_doc:
                 index += 1
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
@@ -157,5 +159,5 @@ class ContentSelector:
                     vec = self.scaler.transform(vec)
 
                     # Add additional features here
-                    sents.append((sentence, self.model.predict(vec)))'''
+                    sents.append((sentence, self.model.predict(vec)))
         return sorted(sents, key=lambda x: x[1], reverse=True)
