@@ -8,7 +8,7 @@ gold = json.load(open(sys.argv[1], 'r'))
 documents = json.load(open(sys.argv[2], 'r'))
 
 selector = ContentSelector.ContentSelector()
-selector.train(documents, gold)
+#selector.train(documents, gold)
 
 realizer = ContentRealizer.ContentRealizer()
 

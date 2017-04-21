@@ -141,7 +141,7 @@ class ContentSelector:
                 sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
-            for sentence in a_doc:
+            '''for sentence in a_doc:
                 index += 1
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
@@ -157,5 +157,5 @@ class ContentSelector:
                     vec = self.scaler.transform(vec)
 
                     # Add additional features here
-                    sents.append((sentence, self.model.predict(vec)))
+                    sents.append((sentence, self.model.predict(vec)))'''
         return sorted(sents, key=lambda x: x[1], reverse=True)
