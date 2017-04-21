@@ -156,7 +156,7 @@ class ContentSelector:
                     vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                     vec.extend(position.score_sent(sentence, first, all))
                     vec = np.array(vec).reshape(1, -1)
-                    vec = self.scaler.transform(vec)
+                    # vec = self.scaler.transform(vec)
 
                     # Add additional features here
                     sents.append((sentence, self.model.predict(vec)))
