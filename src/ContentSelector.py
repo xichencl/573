@@ -69,7 +69,7 @@ class ContentSelector:
             an_event = docs[event]
             first, all = position.get_positions(an_event)
             back_list, vocab = kl.get_freq_list(an_event)
-            #back_list2, vocab2 = kl_bigrams.get_freq_list(an_event)
+            back_list2, vocab2 = kl_bigrams.get_freq_list(an_event)
             cluster_counts = llr.get_cluster_counts(an_event)
             for document in an_event.keys():
                 a_doc = an_event[document]
@@ -84,7 +84,7 @@ class ContentSelector:
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
-                        #vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
+                        vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                         vec.extend(position.score_sent(sentence, first, all))
                         vec = np.array(vec)
                         # Add additional features here
@@ -107,7 +107,7 @@ class ContentSelector:
                             vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
-                            #vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
+                            vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                             vec.extend(position.score_sent(sentence, first, all))
                             vec = np.array(vec)
                             # Add additional features here
@@ -132,7 +132,7 @@ class ContentSelector:
         sents = []
         cluster_counts = llr.get_cluster_counts(docs)
         back_list, vocab = kl.get_freq_list(docs)
-        #back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
+        back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
         first, all = position.get_positions(docs)
         for document in docs.keys():
             a_doc = docs[document]
@@ -153,7 +153,7 @@ class ContentSelector:
                     vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
-                    #vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
+                    vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                     vec.extend(position.score_sent(sentence, first, all))
                     vec = np.array(vec).reshape(1, -1)
                     # vec = self.scaler.transform(vec)

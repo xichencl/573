@@ -1,7 +1,7 @@
 executable = main_eval.sh
 getenv     = true
 input   = /dev/null
-output  = linear_regression_binary_target.out
+output  = main_eval.out
 error      = main_eval.error
 log        = main_eval.log
 notification = complete
