@@ -1,7 +1,7 @@
 executable = main_eval.sh
 getenv     = true
 input   = /dev/null
-output  = /dev/null
+output  = main_eval.out
 error      = main_eval.error
 log        = main_eval.log
 notification = complete
