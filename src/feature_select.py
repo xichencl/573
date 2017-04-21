@@ -16,7 +16,7 @@ def get_feats(x, y):
               'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ', 'sentiment', 'KL',
               'KL_rev', 'KL_big', 'KL_big_rev', 'early_first', 'avg_first', 'avg_pos']
     sorted_labels = []
-
+    x = np.array(x)
     # Print the feature ranking
     print("Feature ranking:")
     for f in range(x.shape[1]):
