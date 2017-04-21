@@ -69,7 +69,7 @@ class ContentSelector:
             an_event = docs[event]
             first, all = position.get_positions(an_event)
             back_list, vocab = kl.get_freq_list(an_event)
-            back_list2, vocab2 = kl_bigrams.get_freq_list(an_event)
+            #back_list2, vocab2 = kl_bigrams.get_freq_list(an_event)
             cluster_counts = llr.get_cluster_counts(an_event)
             for document in an_event.keys():
                 a_doc = an_event[document]
@@ -84,7 +84,7 @@ class ContentSelector:
                         vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
-                        vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
+                        #vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                         vec.extend(position.score_sent(sentence, first, all))
                         vec = np.array(vec)
                         # Add additional features here
@@ -107,21 +107,21 @@ class ContentSelector:
                             vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
-                            vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
+                            #vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                             vec.extend(position.score_sent(sentence, first, all))
                             vec = np.array(vec)
                             # Add additional features here
                             x.append(vec)
                             y.append(1)
-        #self.scaler.fit(x)
-        #x = self.scaler.transform(x)
+        self.scaler.fit(x)
+        x = self.scaler.transform(x)
         y = np.array(y) / max(y)
         #parameters = {'alpha': 10.0 ** -np.arange(1, 7), 'activation': ['identity', 'logistic', 'tanh', 'relu'],
         #              'solver': ['lbfgs', 'sgd', 'adam']}
 
         #self.model = GridSearchCV(MLPRegressor(), parameters)
-        #self.model = MLPRegressor()
-        self.model = LinearRegression()
+        self.model = MLPRegressor()
+        #self.model = LinearRegression()
         self.model.fit(x, y)
         #print(self.model)
         feature_select.get_feats(x, y)
@@ -132,15 +132,15 @@ class ContentSelector:
         sents = []
         cluster_counts = llr.get_cluster_counts(docs)
         back_list, vocab = kl.get_freq_list(docs)
-        back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
+        #back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
         first, all = position.get_positions(docs)
         for document in docs.keys():
             a_doc = docs[document]
             index = 0
-            #if len(a_doc) > 1:
-            #    sents.append((a_doc[1], 1))
-            #else:
-            #    sents.append((a_doc[0], 1))
+            if len(a_doc) > 1:
+                sents.append((a_doc[1], 1))
+            else:
+                sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
             for sentence in a_doc:
@@ -153,7 +153,7 @@ class ContentSelector:
                     vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
-                    vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
+                    #vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                     vec.extend(position.score_sent(sentence, first, all))
                     vec = np.array(vec).reshape(1, -1)
                     # vec = self.scaler.transform(vec)
