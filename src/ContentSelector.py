@@ -51,7 +51,7 @@ class ContentSelector:
         x = []
         y = []
         for event in cluster_info.keys():
-            '''
+
             all_sums = ''
             for document in gold[event].keys():
                 if len(document) < 6 or document[6] == 'A':
@@ -61,7 +61,7 @@ class ContentSelector:
                     a_sum = re.sub('\n', ' ', a_sum)
                     all_sums += a_sum + ' '
             sum_words = nltk.word_tokenize(all_sums)
-            sum_bigs = list(nltk.ngrams(sum_words, 2))'''
+            sum_bigs = list(nltk.ngrams(sum_words, 2))
 
 
             print('Processing Cluster ' + str(event_ind) + '/' + str(len(cluster_info.keys())))
@@ -89,7 +89,7 @@ class ContentSelector:
                         vec = np.array(vec)
                         # Add additional features here
                         x.append(vec)
-                        y.append(0)
+                        y.append(eval.get_rouge(sentence, sum_bigs, list(sum_words)))
             gold_sums = gold[event]
             for document in gold_sums.keys():
                 if len(document) < 6 or document[6] == 'A':
@@ -112,7 +112,7 @@ class ContentSelector:
                             vec = np.array(vec)
                             # Add additional features here
                             x.append(vec)
-                            y.append(1)
+                            y.append(eval.get_rouge(sentence, sum_bigs, list(sum_words)))
         self.scaler.fit(x)
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
@@ -121,7 +121,6 @@ class ContentSelector:
 
         #self.model = GridSearchCV(MLPRegressor(), parameters)
         self.model = MLPRegressor()
-        #self.model = LinearRegression()
         self.model.fit(x, y)
         #print(self.model)
         feature_select.get_feats(x, y)
@@ -156,7 +155,7 @@ class ContentSelector:
                     vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
                     vec.extend(position.score_sent(sentence, first, all))
                     vec = np.array(vec).reshape(1, -1)
-                    # vec = self.scaler.transform(vec)
+                    vec = self.scaler.transform(vec)
 
                     # Add additional features here
                     sents.append((sentence, self.model.predict(vec)))
