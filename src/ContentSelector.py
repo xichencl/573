@@ -51,7 +51,7 @@ class ContentSelector:
         x = []
         y = []
         for event in cluster_info.keys():
-
+            '''
             all_sums = ''
             for document in gold[event].keys():
                 if len(document) < 6 or document[6] == 'A':
@@ -61,7 +61,7 @@ class ContentSelector:
                     a_sum = re.sub('\n', ' ', a_sum)
                     all_sums += a_sum + ' '
             sum_words = nltk.word_tokenize(all_sums)
-            sum_bigs = list(nltk.ngrams(sum_words, 2))
+            sum_bigs = list(nltk.ngrams(sum_words, 2))'''
 
 
             print('Processing Cluster ' + str(event_ind) + '/' + str(len(cluster_info.keys())))
@@ -89,7 +89,7 @@ class ContentSelector:
                         vec = np.array(vec)
                         # Add additional features here
                         x.append(vec)
-                        y.append(eval.get_rouge2(sentence, sum_bigs))
+                        y.append(0)
             gold_sums = gold[event]
             for document in gold_sums.keys():
                 if len(document) < 6 or document[6] == 'A':
@@ -112,7 +112,7 @@ class ContentSelector:
                             vec = np.array(vec)
                             # Add additional features here
                             x.append(vec)
-                            y.append(eval.get_rouge2(sentence, sum_bigs))
+                            y.append(1)
         #self.scaler.fit(x)
         #x = self.scaler.transform(x)
         y = np.array(y) / max(y)
