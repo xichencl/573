@@ -6,20 +6,21 @@ import sys
 import re
 
 gold = json.load(open(sys.argv[1], 'r'))
-documents = json.load(open(sys.argv[2], 'r'))
+train_documents = json.load(open(sys.argv[2], 'r'))
+test_documents = json.load(open(sys.argv[3], 'r'))
 
 selector = ContentSelector.ContentSelector()
-selector.train(documents, gold)
+selector.train(train_documents, gold)
 
 sorter = ContentSorter.ContentSorter();
 
 realizer = ContentRealizer.ContentRealizer()
 
 index = 0
-for event in documents.keys():
+for event in test_documents.keys():
     index += 1
-    an_event = documents[event]
-    print("Testing " + str(index) + '/' + str(len(documents.keys())))
+    an_event = test_documents[event]
+    print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
     results = selector.test(an_event, 10)
     sotred_results = sorter.sort(results);
     picked = realizer.realize(sotred_results, 100)
