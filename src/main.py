@@ -22,12 +22,14 @@ for event in test_documents.keys():
     an_event = test_documents[event]
     print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
     results = selector.test(an_event, 10)
-    sotred_results = sorter.sort(results);
-    picked = realizer.realize(sotred_results, 100)
+    sorter.sort(results);
+    picked = realizer.realize(results, 100)
     summary = re.sub('\W+', ' ', ' '.join(picked))
+
     if 'Group' in event:
         out = open('/home2/mblac6/573/573/outputs/D2/' + event, 'w')
     else:
         out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1], 'w')
     out.write(summary)
+
 
