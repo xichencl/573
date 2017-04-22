@@ -158,5 +158,5 @@ class ContentSelector:
                     vec = self.scaler.transform(vec)
 
                     # Add additional features here
-                    sents.append((sentence, self.model.predict(vec)))
+                    sents.append((sentence, self.model.predict(vec))[0])
         return sorted(sents, key=lambda x: x[1], reverse=True)
