@@ -5,12 +5,12 @@ from features import ling_features
 from features import kl
 from features import kl_bigrams
 from features import position
+import random
 import feature_select
 import eval
 from sklearn.neural_network import MLPRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
 import numpy as np
 import math
 import nltk
@@ -40,7 +40,6 @@ class ContentSelector:
         x = []
         y = []
         for event in cluster_info.keys():
-
             all_sums = ''
             for document in gold[event].keys():
                 if len(document) < 6 or document[6] == 'A':
@@ -70,7 +69,7 @@ class ContentSelector:
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-                        vec.append(len(sentence.split()))
+                        #vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
                         vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -94,7 +93,7 @@ class ContentSelector:
                             vec = []
                             vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                             vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-                            vec.append(len(sentence.split()))
+                            #vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
                             vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -135,7 +134,7 @@ class ContentSelector:
                     vec = []
                     vec.extend(tf_idf.get_tf_idf_average(sentence, info["tf_idf"]))
                     vec.extend(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
-                    vec.append(len(sentence.split()))
+                    #vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
                     vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -143,6 +142,6 @@ class ContentSelector:
                     vec = np.array(vec).reshape(1, -1)
                     vec = self.scaler.transform(vec)
 
-                    # Add additional features here›‹
+                    # Add additional features here
                     sents.append((sentence, float(self.model.predict(vec))))
         return sorted(sents, key=lambda x: x[1], reverse=True)
