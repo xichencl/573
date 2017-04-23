@@ -4,12 +4,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1001</P>
+        <P ID="1" >D1001-A.M.100.A.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1001-A.M.100.A.A</M>
@@ -23,12 +23,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1002</P>
+        <P ID="1" >D1002-A.M.100.A.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1002-A.M.100.A.A</M>
@@ -42,12 +42,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1003</P>
+        <P ID="1" >D1003-A.M.100.A.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1003-A.M.100.A.A</M>
@@ -61,12 +61,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1004</P>
+        <P ID="1" >D1004-A.M.100.A.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1004-A.M.100.A.A</M>
@@ -80,12 +80,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1005</P>
+        <P ID="1" >D1005-A.M.100.A.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1005-A.M.100.A.A</M>
@@ -99,12 +99,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1006</P>
+        <P ID="1" >D1006-A.M.100.A.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1006-A.M.100.A.A</M>
@@ -118,12 +118,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1007</P>
+        <P ID="1" >D1007-A.M.100.B.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1007-A.M.100.B.A</M>
@@ -137,15 +137,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1008</P>
+        <P ID="1" >D1008-A.M.100.B.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1008-A.M.100.B.B</M>
+<M ID="A">D1008-A.M.100.B.A</M>
 <M ID="A">D1008-A.M.100.B.D</M>
 <M ID="A">D1008-A.M.100.B.E</M>
 <M ID="A">D1008-A.M.100.B.H</M>
@@ -156,7 +156,7 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
@@ -169,15 +169,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1009</P>
+        <P ID="1" >D1009-A.M.100.B.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1009-A.M.100.B.B</M>
+<M ID="A">D1009-A.M.100.B.A</M>
 <M ID="A">D1009-A.M.100.B.C</M>
 <M ID="A">D1009-A.M.100.B.F</M>
 <M ID="A">D1009-A.M.100.B.G</M>
@@ -189,15 +189,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1010</P>
+        <P ID="1" >D1010-A.M.100.B.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1010-A.M.100.B.B</M>
+<M ID="A">D1010-A.M.100.B.A</M>
 <M ID="A">D1010-A.M.100.B.C</M>
 <M ID="A">D1010-A.M.100.B.G</M>
 <M ID="A">D1010-A.M.100.B.H</M>
@@ -208,12 +208,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1011</P>
+        <P ID="1" >D1011-A.M.100.C.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1011-A.M.100.C.A</M>
@@ -227,15 +227,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1012</P>
+        <P ID="1" >D1012-A.M.100.C.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1012-A.M.100.C.C</M>
+<M ID="A">D1012-A.M.100.C.A</M>
 <M ID="A">D1012-A.M.100.C.D</M>
 <M ID="A">D1012-A.M.100.C.E</M>
 <M ID="A">D1012-A.M.100.C.F</M>
@@ -246,12 +246,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1013</P>
+        <P ID="1" >D1013-A.M.100.C.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1013-A.M.100.C.A</M>
@@ -265,15 +265,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1014</P>
+        <P ID="1" >D1014-A.M.100.C.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1014-A.M.100.C.C</M>
+<M ID="A">D1014-A.M.100.C.A</M>
 <M ID="A">D1014-A.M.100.C.E</M>
 <M ID="A">D1014-A.M.100.C.G</M>
 <M ID="A">D1014-A.M.100.C.H</M>
@@ -284,12 +284,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1015</P>
+        <P ID="1" >D1015-A.M.100.C.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1015-A.M.100.C.A</M>
@@ -303,15 +303,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1016</P>
+        <P ID="1" >D1016-A.M.100.C.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1016-A.M.100.C.B</M>
+<M ID="A">D1016-A.M.100.C.A</M>
 <M ID="A">D1016-A.M.100.C.C</M>
 <M ID="A">D1016-A.M.100.C.E</M>
 <M ID="A">D1016-A.M.100.C.H</M>
@@ -322,12 +322,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1017</P>
+        <P ID="1" >D1017-A.M.100.D.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1017-A.M.100.D.A</M>
@@ -341,15 +341,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1018</P>
+        <P ID="1" >D1018-A.M.100.D.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1018-A.M.100.D.B</M>
+<M ID="A">D1018-A.M.100.D.A</M>
 <M ID="A">D1018-A.M.100.D.C</M>
 <M ID="A">D1018-A.M.100.D.D</M>
 <M ID="A">D1018-A.M.100.D.G</M>
@@ -360,15 +360,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1019</P>
+        <P ID="1" >D1019-A.M.100.D.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1019-A.M.100.D.C</M>
+<M ID="A">D1019-A.M.100.D.A</M>
 <M ID="A">D1019-A.M.100.D.D</M>
 <M ID="A">D1019-A.M.100.D.F</M>
 <M ID="A">D1019-A.M.100.D.H</M>
@@ -379,12 +379,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1020</P>
+        <P ID="1" >D1020-A.M.100.D.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1020-A.M.100.D.A</M>
@@ -398,12 +398,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1021</P>
+        <P ID="1" >D1021-A.M.100.D.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1021-A.M.100.D.A</M>
@@ -417,15 +417,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1022</P>
+        <P ID="1" >D1022-A.M.100.D.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1022-A.M.100.D.C</M>
+<M ID="A">D1022-A.M.100.D.A</M>
 <M ID="A">D1022-A.M.100.D.D</M>
 <M ID="A">D1022-A.M.100.D.F</M>
 <M ID="A">D1022-A.M.100.D.H</M>
@@ -436,15 +436,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1023</P>
+        <P ID="1" >D1023-A.M.100.E.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1023-A.M.100.E.B</M>
+<M ID="A">D1023-A.M.100.E.A</M>
 <M ID="A">D1023-A.M.100.E.D</M>
 <M ID="A">D1023-A.M.100.E.E</M>
 <M ID="A">D1023-A.M.100.E.G</M>
@@ -455,15 +455,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1024</P>
+        <P ID="1" >D1024-A.M.100.E.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1024-A.M.100.E.C</M>
+<M ID="A">D1024-A.M.100.E.A</M>
 <M ID="A">D1024-A.M.100.E.E</M>
 <M ID="A">D1024-A.M.100.E.F</M>
 <M ID="A">D1024-A.M.100.E.H</M>
@@ -474,12 +474,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1025</P>
+        <P ID="1" >D1025-A.M.100.E.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1025-A.M.100.E.A</M>
@@ -493,15 +493,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1026</P>
+        <P ID="1" >D1026-A.M.100.E.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1026-A.M.100.E.C</M>
+<M ID="A">D1026-A.M.100.E.A</M>
 <M ID="A">D1026-A.M.100.E.E</M>
 <M ID="A">D1026-A.M.100.E.F</M>
 <M ID="A">D1026-A.M.100.E.G</M>
@@ -512,15 +512,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1027</P>
+        <P ID="1" >D1027-A.M.100.E.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1027-A.M.100.E.B</M>
+<M ID="A">D1027-A.M.100.E.A</M>
 <M ID="A">D1027-A.M.100.E.D</M>
 <M ID="A">D1027-A.M.100.E.E</M>
 <M ID="A">D1027-A.M.100.E.G</M>
@@ -531,12 +531,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1028</P>
+        <P ID="1" >D1028-A.M.100.E.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1028-A.M.100.E.A</M>
@@ -550,12 +550,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1029</P>
+        <P ID="1" >D1029-A.M.100.F.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1029-A.M.100.F.A</M>
@@ -569,15 +569,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1030</P>
+        <P ID="1" >D1030-A.M.100.F.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1030-A.M.100.F.D</M>
+<M ID="A">D1030-A.M.100.F.A</M>
 <M ID="A">D1030-A.M.100.F.E</M>
 <M ID="A">D1030-A.M.100.F.F</M>
 <M ID="A">D1030-A.M.100.F.G</M>
@@ -588,12 +588,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1031</P>
+        <P ID="1" >D1031-A.M.100.F.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1031-A.M.100.F.A</M>
@@ -607,15 +607,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1032</P>
+        <P ID="1" >D1032-A.M.100.F.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1032-A.M.100.F.B</M>
+<M ID="A">D1032-A.M.100.F.A</M>
 <M ID="A">D1032-A.M.100.F.D</M>
 <M ID="A">D1032-A.M.100.F.F</M>
 <M ID="A">D1032-A.M.100.F.G</M>
@@ -626,15 +626,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1033</P>
+        <P ID="1" >D1033-A.M.100.F.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1033-A.M.100.F.C</M>
+<M ID="A">D1033-A.M.100.F.A</M>
 <M ID="A">D1033-A.M.100.F.E</M>
 <M ID="A">D1033-A.M.100.F.F</M>
 <M ID="A">D1033-A.M.100.F.H</M>
@@ -645,12 +645,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1034</P>
+        <P ID="1" >D1034-A.M.100.F.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1034-A.M.100.F.A</M>
@@ -664,15 +664,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1035</P>
+        <P ID="1" >D1035-A.M.100.G.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1035-A.M.100.G.D</M>
+<M ID="A">D1035-A.M.100.G.A</M>
 <M ID="A">D1035-A.M.100.G.E</M>
 <M ID="A">D1035-A.M.100.G.F</M>
 <M ID="A">D1035-A.M.100.G.G</M>
@@ -683,12 +683,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1036</P>
+        <P ID="1" >D1036-A.M.100.G.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1036-A.M.100.G.A</M>
@@ -702,15 +702,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1037</P>
+        <P ID="1" >D1037-A.M.100.G.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1037-A.M.100.G.B</M>
+<M ID="A">D1037-A.M.100.G.A</M>
 <M ID="A">D1037-A.M.100.G.C</M>
 <M ID="A">D1037-A.M.100.G.G</M>
 <M ID="A">D1037-A.M.100.G.H</M>
@@ -721,12 +721,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1038</P>
+        <P ID="1" >D1038-A.M.100.G.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1038-A.M.100.G.A</M>
@@ -740,12 +740,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1039</P>
+        <P ID="1" >D1039-A.M.100.G.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1039-A.M.100.G.A</M>
@@ -759,15 +759,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1040</P>
+        <P ID="1" >D1040-A.M.100.G.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1040-A.M.100.G.B</M>
+<M ID="A">D1040-A.M.100.G.A</M>
 <M ID="A">D1040-A.M.100.G.C</M>
 <M ID="A">D1040-A.M.100.G.F</M>
 <M ID="A">D1040-A.M.100.G.G</M>
@@ -778,15 +778,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1041</P>
+        <P ID="1" >D1041-A.M.100.H.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1041-A.M.100.H.D</M>
+<M ID="A">D1041-A.M.100.H.A</M>
 <M ID="A">D1041-A.M.100.H.E</M>
 <M ID="A">D1041-A.M.100.H.G</M>
 <M ID="A">D1041-A.M.100.H.H</M>
@@ -797,15 +797,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1042</P>
+        <P ID="1" >D1042-A.M.100.H.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1042-A.M.100.H.B</M>
+<M ID="A">D1042-A.M.100.H.A</M>
 <M ID="A">D1042-A.M.100.H.C</M>
 <M ID="A">D1042-A.M.100.H.F</M>
 <M ID="A">D1042-A.M.100.H.H</M>
@@ -816,12 +816,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1043</P>
+        <P ID="1" >D1043-A.M.100.H.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1043-A.M.100.H.A</M>
@@ -835,12 +835,12 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1044</P>
+        <P ID="1" >D1044-A.M.100.H.A</P>
         </PEERS>
         <MODELS>
 <M ID="A">D1044-A.M.100.H.A</M>
@@ -854,15 +854,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1045</P>
+        <P ID="1" >D1045-A.M.100.H.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1045-A.M.100.H.C</M>
+<M ID="A">D1045-A.M.100.H.A</M>
 <M ID="A">D1045-A.M.100.H.E</M>
 <M ID="A">D1045-A.M.100.H.F</M>
 <M ID="A">D1045-A.M.100.H.H</M>
@@ -873,15 +873,15 @@
         /home2/mblac6/573/573/outputs/D2
         </PEER-ROOT>
         <MODEL-ROOT>
-        /home2/mblac6/573/573/eval/training
+        /home2/mblac6/573/573/eval/devtest
         </MODEL-ROOT>
         <INPUT-FORMAT TYPE="SPL">
         </INPUT-FORMAT>
         <PEERS>
-        <P ID="1">D1046</P>
+        <P ID="1" >D1046-A.M.100.H.A</P>
         </PEERS>
         <MODELS>
-<M ID="A">D1046-A.M.100.H.D</M>
+<M ID="A">D1046-A.M.100.H.A</M>
 <M ID="A">D1046-A.M.100.H.E</M>
 <M ID="A">D1046-A.M.100.H.G</M>
 <M ID="A">D1046-A.M.100.H.H</M>

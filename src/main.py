@@ -25,11 +25,12 @@ for event in test_documents:
     sorter.sort(results);
     picked = realizer.realize(results, 100)
     summary = re.sub('\W+', ' ', ' '.join(picked))
+    letter = event[-1]
 
     if 'Group' in event:
         out = open('/home2/mblac6/573/573/outputs/D2/' + event, 'w')
     else:
-        out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1], 'w')
+        out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1] + '-A.M.100.' + letter + 'A', 'w')
     out.write(summary)
 
 
