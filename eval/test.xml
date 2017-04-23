@@ -1,0 +1,890 @@
+<ROUGE_EVAL version="1.5.5">
+<EVAL ID="D1001">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1001</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1001-A.M.100.A.A</M>
+<M ID="A">D1001-A.M.100.A.B</M>
+<M ID="A">D1001-A.M.100.A.F</M>
+<M ID="A">D1001-A.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1002">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1002</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1002-A.M.100.A.A</M>
+<M ID="A">D1002-A.M.100.A.B</M>
+<M ID="A">D1002-A.M.100.A.C</M>
+<M ID="A">D1002-A.M.100.A.D</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1003">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1003</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1003-A.M.100.A.A</M>
+<M ID="A">D1003-A.M.100.A.C</M>
+<M ID="A">D1003-A.M.100.A.E</M>
+<M ID="A">D1003-A.M.100.A.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1004">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1004</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1004-A.M.100.A.A</M>
+<M ID="A">D1004-A.M.100.A.D</M>
+<M ID="A">D1004-A.M.100.A.F</M>
+<M ID="A">D1004-A.M.100.A.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1005">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1005</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1005-A.M.100.A.A</M>
+<M ID="A">D1005-A.M.100.A.E</M>
+<M ID="A">D1005-A.M.100.A.F</M>
+<M ID="A">D1005-A.M.100.A.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1006">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1006</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1006-A.M.100.A.A</M>
+<M ID="A">D1006-A.M.100.A.B</M>
+<M ID="A">D1006-A.M.100.A.D</M>
+<M ID="A">D1006-A.M.100.A.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1007">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1007</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1007-A.M.100.B.A</M>
+<M ID="A">D1007-A.M.100.B.B</M>
+<M ID="A">D1007-A.M.100.B.E</M>
+<M ID="A">D1007-A.M.100.B.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1008">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1008</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1008-A.M.100.B.B</M>
+<M ID="A">D1008-A.M.100.B.D</M>
+<M ID="A">D1008-A.M.100.B.E</M>
+<M ID="A">D1008-A.M.100.B.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1009">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1009</P>
+        </PEERS>
+        <MODELS>
+<EVAL ID="D1009">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1009</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1009-A.M.100.B.B</M>
+<M ID="A">D1009-A.M.100.B.C</M>
+<M ID="A">D1009-A.M.100.B.F</M>
+<M ID="A">D1009-A.M.100.B.G</M>
+</MODELS>
+</EVAL>
+</MODELS>
+</EVAL><EVAL ID="D1010">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1010</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1010-A.M.100.B.B</M>
+<M ID="A">D1010-A.M.100.B.C</M>
+<M ID="A">D1010-A.M.100.B.G</M>
+<M ID="A">D1010-A.M.100.B.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1011">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1011</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1011-A.M.100.C.A</M>
+<M ID="A">D1011-A.M.100.C.B</M>
+<M ID="A">D1011-A.M.100.C.C</M>
+<M ID="A">D1011-A.M.100.C.E</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1012">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1012</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1012-A.M.100.C.C</M>
+<M ID="A">D1012-A.M.100.C.D</M>
+<M ID="A">D1012-A.M.100.C.E</M>
+<M ID="A">D1012-A.M.100.C.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1013">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1013</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1013-A.M.100.C.A</M>
+<M ID="A">D1013-A.M.100.C.B</M>
+<M ID="A">D1013-A.M.100.C.C</M>
+<M ID="A">D1013-A.M.100.C.D</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1014">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1014</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1014-A.M.100.C.C</M>
+<M ID="A">D1014-A.M.100.C.E</M>
+<M ID="A">D1014-A.M.100.C.G</M>
+<M ID="A">D1014-A.M.100.C.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1015">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1015</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1015-A.M.100.C.A</M>
+<M ID="A">D1015-A.M.100.C.C</M>
+<M ID="A">D1015-A.M.100.C.E</M>
+<M ID="A">D1015-A.M.100.C.F</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1016">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1016</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1016-A.M.100.C.B</M>
+<M ID="A">D1016-A.M.100.C.C</M>
+<M ID="A">D1016-A.M.100.C.E</M>
+<M ID="A">D1016-A.M.100.C.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1017">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1017</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1017-A.M.100.D.A</M>
+<M ID="A">D1017-A.M.100.D.B</M>
+<M ID="A">D1017-A.M.100.D.D</M>
+<M ID="A">D1017-A.M.100.D.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1018">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1018</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1018-A.M.100.D.B</M>
+<M ID="A">D1018-A.M.100.D.C</M>
+<M ID="A">D1018-A.M.100.D.D</M>
+<M ID="A">D1018-A.M.100.D.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1019">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1019</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1019-A.M.100.D.C</M>
+<M ID="A">D1019-A.M.100.D.D</M>
+<M ID="A">D1019-A.M.100.D.F</M>
+<M ID="A">D1019-A.M.100.D.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1020">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1020</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1020-A.M.100.D.A</M>
+<M ID="A">D1020-A.M.100.D.D</M>
+<M ID="A">D1020-A.M.100.D.G</M>
+<M ID="A">D1020-A.M.100.D.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1021">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1021</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1021-A.M.100.D.A</M>
+<M ID="A">D1021-A.M.100.D.B</M>
+<M ID="A">D1021-A.M.100.D.D</M>
+<M ID="A">D1021-A.M.100.D.E</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1022">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1022</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1022-A.M.100.D.C</M>
+<M ID="A">D1022-A.M.100.D.D</M>
+<M ID="A">D1022-A.M.100.D.F</M>
+<M ID="A">D1022-A.M.100.D.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1023">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1023</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1023-A.M.100.E.B</M>
+<M ID="A">D1023-A.M.100.E.D</M>
+<M ID="A">D1023-A.M.100.E.E</M>
+<M ID="A">D1023-A.M.100.E.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1024">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1024</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1024-A.M.100.E.C</M>
+<M ID="A">D1024-A.M.100.E.E</M>
+<M ID="A">D1024-A.M.100.E.F</M>
+<M ID="A">D1024-A.M.100.E.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1025">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1025</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1025-A.M.100.E.A</M>
+<M ID="A">D1025-A.M.100.E.D</M>
+<M ID="A">D1025-A.M.100.E.E</M>
+<M ID="A">D1025-A.M.100.E.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1026">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1026</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1026-A.M.100.E.C</M>
+<M ID="A">D1026-A.M.100.E.E</M>
+<M ID="A">D1026-A.M.100.E.F</M>
+<M ID="A">D1026-A.M.100.E.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1027">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1027</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1027-A.M.100.E.B</M>
+<M ID="A">D1027-A.M.100.E.D</M>
+<M ID="A">D1027-A.M.100.E.E</M>
+<M ID="A">D1027-A.M.100.E.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1028">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1028</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1028-A.M.100.E.A</M>
+<M ID="A">D1028-A.M.100.E.B</M>
+<M ID="A">D1028-A.M.100.E.D</M>
+<M ID="A">D1028-A.M.100.E.E</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1029">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1029</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1029-A.M.100.F.A</M>
+<M ID="A">D1029-A.M.100.F.C</M>
+<M ID="A">D1029-A.M.100.F.F</M>
+<M ID="A">D1029-A.M.100.F.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1030">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1030</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1030-A.M.100.F.D</M>
+<M ID="A">D1030-A.M.100.F.E</M>
+<M ID="A">D1030-A.M.100.F.F</M>
+<M ID="A">D1030-A.M.100.F.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1031">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1031</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1031-A.M.100.F.A</M>
+<M ID="A">D1031-A.M.100.F.C</M>
+<M ID="A">D1031-A.M.100.F.F</M>
+<M ID="A">D1031-A.M.100.F.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1032">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1032</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1032-A.M.100.F.B</M>
+<M ID="A">D1032-A.M.100.F.D</M>
+<M ID="A">D1032-A.M.100.F.F</M>
+<M ID="A">D1032-A.M.100.F.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1033">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1033</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1033-A.M.100.F.C</M>
+<M ID="A">D1033-A.M.100.F.E</M>
+<M ID="A">D1033-A.M.100.F.F</M>
+<M ID="A">D1033-A.M.100.F.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1034">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1034</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1034-A.M.100.F.A</M>
+<M ID="A">D1034-A.M.100.F.B</M>
+<M ID="A">D1034-A.M.100.F.F</M>
+<M ID="A">D1034-A.M.100.F.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1035">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1035</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1035-A.M.100.G.D</M>
+<M ID="A">D1035-A.M.100.G.E</M>
+<M ID="A">D1035-A.M.100.G.F</M>
+<M ID="A">D1035-A.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1036">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1036</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1036-A.M.100.G.A</M>
+<M ID="A">D1036-A.M.100.G.B</M>
+<M ID="A">D1036-A.M.100.G.F</M>
+<M ID="A">D1036-A.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1037">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1037</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1037-A.M.100.G.B</M>
+<M ID="A">D1037-A.M.100.G.C</M>
+<M ID="A">D1037-A.M.100.G.G</M>
+<M ID="A">D1037-A.M.100.G.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1038">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1038</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1038-A.M.100.G.A</M>
+<M ID="A">D1038-A.M.100.G.C</M>
+<M ID="A">D1038-A.M.100.G.F</M>
+<M ID="A">D1038-A.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1039">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1039</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1039-A.M.100.G.A</M>
+<M ID="A">D1039-A.M.100.G.D</M>
+<M ID="A">D1039-A.M.100.G.E</M>
+<M ID="A">D1039-A.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1040">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1040</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1040-A.M.100.G.B</M>
+<M ID="A">D1040-A.M.100.G.C</M>
+<M ID="A">D1040-A.M.100.G.F</M>
+<M ID="A">D1040-A.M.100.G.G</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1041">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1041</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1041-A.M.100.H.D</M>
+<M ID="A">D1041-A.M.100.H.E</M>
+<M ID="A">D1041-A.M.100.H.G</M>
+<M ID="A">D1041-A.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1042">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1042</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1042-A.M.100.H.B</M>
+<M ID="A">D1042-A.M.100.H.C</M>
+<M ID="A">D1042-A.M.100.H.F</M>
+<M ID="A">D1042-A.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1043">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1043</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1043-A.M.100.H.A</M>
+<M ID="A">D1043-A.M.100.H.B</M>
+<M ID="A">D1043-A.M.100.H.G</M>
+<M ID="A">D1043-A.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1044">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1044</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1044-A.M.100.H.A</M>
+<M ID="A">D1044-A.M.100.H.D</M>
+<M ID="A">D1044-A.M.100.H.G</M>
+<M ID="A">D1044-A.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1045">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1045</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1045-A.M.100.H.C</M>
+<M ID="A">D1045-A.M.100.H.E</M>
+<M ID="A">D1045-A.M.100.H.F</M>
+<M ID="A">D1045-A.M.100.H.H</M>
+</MODELS>
+</EVAL>
+<EVAL ID="D1046">
+        <PEER-ROOT>
+        /home2/mblac6/573/573/outputs/D2
+        </PEER-ROOT>
+        <MODEL-ROOT>
+        /home2/mblac6/573/573/eval/training
+        </MODEL-ROOT>
+        <INPUT-FORMAT TYPE="SPL">
+        </INPUT-FORMAT>
+        <PEERS>
+        <P ID="1">D1046</P>
+        </PEERS>
+        <MODELS>
+<M ID="A">D1046-A.M.100.H.D</M>
+<M ID="A">D1046-A.M.100.H.E</M>
+<M ID="A">D1046-A.M.100.H.G</M>
+<M ID="A">D1046-A.M.100.H.H</M>
+</MODELS>
+</EVAL>
+</ROUGE_EVAL>
