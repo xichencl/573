@@ -3,7 +3,7 @@ import nltk
 def get_positions(docs):
     first_positions = {}
     all_positions = {}
-    for doc in docs.keys():
+    for doc in docs:
         seen = set()
         a_doc = docs[doc]
         words = nltk.word_tokenize(' '.join(a_doc))

@@ -23,12 +23,12 @@ def add_feats(docs, sent, vec):
     vec.append(num_cap)
     pos_counts = {}
     for pair in pos:
-        if pair[1] in pos_counts.keys():
+        if pair[1] in pos_counts:
             pos_counts[pair[1]] += 1
         else:
             pos_counts[pair[1]] = 1
     for tag in tagset:
-        if tag in pos_counts.keys():
+        if tag in pos_counts:
             #vec.append(float(pos_counts[tag])/len(pos))
             vec.append(pos_counts[tag])
         else:

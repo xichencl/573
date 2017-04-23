@@ -5,13 +5,13 @@ stops = set(nltk.corpus.stopwords.words('english'))
 
 def get_back_counts(all_docs):
     background_counts = {}
-    for event in all_docs.keys():
+    for event in all_docs:
         event_docs = all_docs[event]
-        for event_doc in event_docs.keys():
+        for event_doc in event_docs:
             a_doc = event_docs[event_doc]
             words = nltk.word_tokenize(' '.join(a_doc))
             for word in words:
-                if word in background_counts.keys():
+                if word in background_counts:
                     background_counts[word] += 1
                 else:
                     background_counts[word] = 1
@@ -20,7 +20,7 @@ def get_back_counts(all_docs):
 
 def get_cluster_counts(cluster):
     cluster_counts = {}
-    for doc in cluster.keys():
+    for doc in cluster:
         a_doc = cluster[doc]
         words = nltk.word_tokenize(' '.join(a_doc))
         for word in words:

@@ -9,7 +9,7 @@ def get_tf_idfs(docs):
     doc_counts = {}
     word_counts = {}
 
-    for doc in docs.keys():
+    for doc in docs:
         a_doc = docs[doc]
         words = nltk.word_tokenize(' '.join(a_doc))
         for word in words:

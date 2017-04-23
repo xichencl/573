@@ -5,7 +5,7 @@ import math
 
 def get_freq_list(docs):
     back_fd = {}
-    for doc in docs.keys():
+    for doc in docs:
         a_doc = docs[doc]
         words = nltk.word_tokenize(' '.join(a_doc))
         stems = []
@@ -15,7 +15,7 @@ def get_freq_list(docs):
         bigrams = nltk.ngrams(stems, 2)
         for big in bigrams:
             if big[0] not in nltk.corpus.stopwords.words('english') or big[1] not in nltk.corpus.stopwords.words('english'):
-                if big in back_fd.keys():
+                if big in back_fd:
                     back_fd[big] += 1
                 else:
                     back_fd[big] = 1
@@ -36,7 +36,7 @@ def get_kl(sentence, back_list, vocab):
     fd = nltk.FreqDist(bigrams)
     sent_list = []
     for big in vocab:
-        if big in fd.keys():
+        if big in fd:
             sent_list.append(fd[big] + 1)
         else:
             sent_list.append(1)

@@ -27,7 +27,7 @@ class ContentSelector:
 
         # dictionary containing feature information for each document cluster
         cluster_info = {}
-        for event in docs.keys():
+        for event in docs:
             an_event = docs[event]
             tf_idfs = tf_idf.get_tf_idfs(an_event)
             cluster_info[event] = {}
@@ -39,9 +39,9 @@ class ContentSelector:
         # process sentences in each document of each cluster
         x = []
         y = []
-        for event in cluster_info.keys():
+        for event in cluster_info:
             all_sums = ''
-            for document in gold[event].keys():
+            for document in gold[event]:
                 if len(document) < 6 or document[6] == 'A':
                     a_sum = gold[event][document]
                     if isinstance(a_sum, list):
@@ -59,7 +59,7 @@ class ContentSelector:
             back_list, vocab = kl.get_freq_list(an_event)
             back_list2, vocab2 = kl_bigrams.get_freq_list(an_event)
             cluster_counts = llr.get_cluster_counts(an_event)
-            for document in an_event.keys():
+            for document in an_event:
                 a_doc = an_event[document]
                 for sentence in a_doc:
                     sentence = re.sub('\n', ' ', sentence)
@@ -69,7 +69,7 @@ class ContentSelector:
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-                        #vec.append(len(sentence.split()))
+                        vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
                         vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -79,7 +79,7 @@ class ContentSelector:
                         x.append(vec)
                         y.append(eval.get_rouge(sentence, sum_bigs, list(sum_words)))
             gold_sums = gold[event]
-            for document in gold_sums.keys():
+            for document in gold_sums:
                 if len(document) < 6 or document[6] == 'A':
                     a_sum = gold_sums[document]
                     if isinstance(a_sum, list):
@@ -93,7 +93,7 @@ class ContentSelector:
                             vec = []
                             vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                             vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-                            #vec.append(len(sentence.split()))
+                            vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
                             vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -118,7 +118,7 @@ class ContentSelector:
         back_list, vocab = kl.get_freq_list(docs)
         back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
         first, all = position.get_positions(docs)
-        for document in docs.keys():
+        for document in docs:
             a_doc = docs[document]
             index = 0
             if len(a_doc) > 1:
@@ -134,7 +134,7 @@ class ContentSelector:
                     vec = []
                     vec.extend(tf_idf.get_tf_idf_average(sentence, info["tf_idf"]))
                     vec.extend(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
-                    #vec.append(len(sentence.split()))
+                    vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
                     vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))

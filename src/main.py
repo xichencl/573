@@ -17,7 +17,7 @@ sorter = ContentSorter.ContentSorter();
 realizer = ContentRealizer.ContentRealizer()
 
 index = 0
-for event in test_documents.keys():
+for event in test_documents:
     index += 1
     an_event = test_documents[event]
     print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
