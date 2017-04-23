@@ -69,7 +69,7 @@ class ContentSelector:
                         vec = []
                         vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                         vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-                        vec.append(len(sentence.split()))
+                        #vec.append(len(sentence.split()))
                         vec = ling_features.add_feats(an_event, sentence, vec)
                         vec.extend(kl.get_kl(sentence, back_list, vocab))
                         vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -93,7 +93,7 @@ class ContentSelector:
                             vec = []
                             vec.extend(tf_idf.get_tf_idf_average(sentence, cluster_info[event]["tf_idf"]))
                             vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-                            vec.append(len(sentence.split()))
+                            #vec.append(len(sentence.split()))
                             vec = ling_features.add_feats(an_event, sentence, vec)
                             vec.extend(kl.get_kl(sentence, back_list, vocab))
                             vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -134,7 +134,7 @@ class ContentSelector:
                     vec = []
                     vec.extend(tf_idf.get_tf_idf_average(sentence, info["tf_idf"]))
                     vec.extend(llr.get_weight_sum(sentence, self.background_counts, cluster_counts))
-                    vec.append(len(sentence.split()))
+                    #vec.append(len(sentence.split()))
                     vec = ling_features.add_feats(docs, sentence, vec)
                     vec.extend(kl.get_kl(sentence, back_list, vocab))
                     vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
