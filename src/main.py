@@ -30,7 +30,7 @@ for event in test_documents:
     if 'Group' in event:
         out = open('/home2/mblac6/573/573/outputs/D2/' + event, 'w')
     else:
-        out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1] + '-A.M.100.' + letter + 'A', 'w')
+        out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
     out.write(summary)
 
 
