@@ -2,7 +2,7 @@ Here are the core training and dev files extracted from patas.
 
 training.json and devtest.json are document sets for summarization. 
 The data is stored in a dictionary. 
-{topic id : {doc id : [para1, para2, para3...] } }
+{topic id : {doc id : [sent1, sent2, sent3...] } }
 
 training.human.json and devtest.human.json are model summaries created by humans
 The data is stored in a dictionary. 
