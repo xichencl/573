@@ -2,4 +2,4 @@ LING 573 project Deliverable 2
 
 Macklin Blackburn, Xi Chen, Yuan Zhang
 
-Running D2.cmd will train the system and test it on the training data. The main system run is carried out by src/main.py. Main_eval.sh calls the system and then the ROUGE evaluation. The first argument of main.py is the json file containing the gold standard summaries for the training set, the second is the training documents, and the third is the test documents. Currently the system tests on the devtest set.
+Running D2.cmd will train the system and test it on the devtest data. The main system run is carried out by src/main.py. Main_eval.sh calls the system and then the ROUGE evaluation. The first argument of main.py is the json file containing the gold standard summaries for the training set, the second is the training documents, and the third is the test documents. Currently the system tests on the devtest set.
