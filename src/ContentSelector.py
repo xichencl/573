@@ -146,4 +146,4 @@ class ContentSelector:
                     # Add additional features here
                     doc_sents.append((sentence, float(self.model.predict(vec))))
             sents[document] = doc_sents
-        return doc_sents
+        return sents
