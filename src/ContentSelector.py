@@ -123,9 +123,9 @@ class ContentSelector:
             a_doc = docs[document]
             index = 0
             if len(a_doc) > 1:
-                doc_sents.append((a_doc[1], 1))
+                sents.append((a_doc[1], 1))
             else:
-                doc_sents.append((a_doc[0], 1))
+                sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
             for sentence in a_doc:
