@@ -15,7 +15,6 @@ import numpy as np
 import math
 import nltk
 
-
 class ContentSelector:
     def __init__(self):
         self.model = None
@@ -50,7 +49,8 @@ class ContentSelector:
                     all_sums += a_sum + ' '
             sum_words = nltk.word_tokenize(all_sums)
             sum_bigs = list(nltk.ngrams(sum_words, 2))
-
+            sum_tri = list(nltk.ngrams(sum_words, 3))
+            sum_quad = list(nltk.ngrams(sum_words, 4))
 
             print('Processing Cluster ' + str(event_ind) + '/' + str(len(cluster_info.keys())))
             event_ind += 1
@@ -77,7 +77,7 @@ class ContentSelector:
                         vec = np.array(vec)
                         # Add additional features here
                         x.append(vec)
-                        y.append(eval.get_rouge(sentence, sum_bigs, list(sum_words)))
+                        y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, list(sum_words)))
             gold_sums = gold[event]
             for document in gold_sums:
                 if len(document) < 6 or document[6] == 'A':
@@ -101,7 +101,7 @@ class ContentSelector:
                             vec = np.array(vec)
                             # Add additional features here
                             x.append(vec)
-                            y.append(eval.get_rouge(sentence, sum_bigs, list(sum_words)))
+                            y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, list(sum_words)))
         self.scaler.fit(x)
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
@@ -113,18 +113,19 @@ class ContentSelector:
     def test(self, docs, query=None):
         info = {}
         info['tf_idf'] = tf_idf.get_tf_idfs(docs)
-        sents = []
+        sents = {}
         cluster_counts = llr.get_cluster_counts(docs)
         back_list, vocab = kl.get_freq_list(docs)
         back_list2, vocab2 = kl_bigrams.get_freq_list(docs)
         first, all = position.get_positions(docs)
         for document in docs:
+            doc_sents = []
             a_doc = docs[document]
             index = 0
             if len(a_doc) > 1:
-                sents.append((a_doc[1], 1))
+                doc_sents.append((a_doc[1], 1))
             else:
-                sents.append((a_doc[0], 1))
+                doc_sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
             for sentence in a_doc:
@@ -143,5 +144,6 @@ class ContentSelector:
                     vec = self.scaler.transform(vec)
 
                     # Add additional features here
-                    sents.append((sentence, float(self.model.predict(vec))))
-        return sorted(sents, key=lambda x: x[1], reverse=True)
+                    doc_sents.append((sentence, float(self.model.predict(vec))))
+            sents[document] = doc_sents
+        return doc_sents
