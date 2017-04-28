@@ -21,7 +21,7 @@ for event in test_documents:
     index += 1
     an_event = test_documents[event]
     print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
-    results = selector.test(an_event, 10)
+    results = selector.test(an_event, event, 10)
     sorter.sort(results);
     picked = realizer.realize(results, 100)
     summary = re.sub('\W+', ' ', ' '.join(picked))
