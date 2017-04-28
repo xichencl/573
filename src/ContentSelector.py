@@ -9,7 +9,7 @@ import random
 import feature_select
 import eval
 from sklearn.neural_network import MLPRegressor
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import SGDRegressor
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 import math
@@ -125,6 +125,7 @@ class ContentSelector:
                         # Add additional features here
                         x.append(vec)
                         y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, sum_words_fd))
+
             gold_sums = gold[event]
             for document in gold_sums:
                 if len(document) < 6 or document[6] == 'A':
@@ -142,6 +143,7 @@ class ContentSelector:
                             # Add additional features here
                             x.append(vec)
                             y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, sum_words_fd))
+
         self.scaler.fit(x)
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
@@ -190,6 +192,7 @@ class ContentSelector:
             else:
                 doc_sents.append((a_doc[0], 1))
                 all_sents.append((a_doc[0], 1))
+
             # construct a vector for each sentence in the document
             for sentence in a_doc:
                 index += 1
