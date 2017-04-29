@@ -9,7 +9,7 @@ import random
 import feature_select
 import eval
 from sklearn.neural_network import MLPRegressor
-from sklearn.linear_model import SGDRegressor
+from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 import math
@@ -35,7 +35,7 @@ class ContentSelector:
         except FileNotFoundError:
             pass
 
-    def vectorize(self, sentence, document, tf_idfs, back_counts, cluster_counts, an_event, back_list, vocab, back_list2, vocab2,
+    def vectorize(self, sentence, idx, document, tf_idfs, back_counts, cluster_counts, an_event, back_list, vocab, back_list2, vocab2,
                   first_p, all_p):
         vec = []
         key = (sentence, document)
@@ -44,11 +44,13 @@ class ContentSelector:
         else:
             vec.extend(tf_idf.get_tf_idf_average(sentence, tf_idfs))
             vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-            #vec.append(len(sentence.split()))
+            vec.append(len(sentence.split()))
             vec = ling_features.add_feats(an_event, sentence, vec)
             vec.extend(kl.get_kl(sentence, back_list, vocab))
             vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
             vec.extend(position.score_sent(sentence, first_p, all_p))
+            vec.append(int(idx < 1))
+            vec.append(idx)
             vec = np.array(vec)
             self.vecs[key] = vec
         return vec
@@ -115,13 +117,15 @@ class ContentSelector:
             cluster_counts = self.cluster_info[event]["cluster_counts"]
             for document in an_event:
                 a_doc = an_event[document]
+                sent_idx = 0
                 for sentence in a_doc:
                     sentence = re.sub('\n', ' ', sentence)
 
                     # construct a vector for each sentence in the document
                     if 1 < len(sentence.split()):
-                        vec = self.vectorize(sentence, document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
+                        vec = self.vectorize(sentence, sent_idx, document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
                                              an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)
+                        sent_idx += 1
                         # Add additional features here
                         x.append(vec)
                         y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, sum_words_fd))
@@ -136,10 +140,12 @@ class ContentSelector:
 
                     # construct a vector for each sentence in the summary
                     sents = nltk.sent_tokenize(a_sum)
+                    sent_idx = 0
                     for sentence in sents:
                         if len(sentence) > 1:
-                            vec = self.vectorize(sentence, document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
+                            vec = self.vectorize(sentence, sent_idx, document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
                                                  an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)
+                            sent_idx += 1
                             # Add additional features here
                             x.append(vec)
                             y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, sum_words_fd))
@@ -148,7 +154,7 @@ class ContentSelector:
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
 
-        self.model = MLPRegressor()
+        self.model = LinearRegression()
         self.model.fit(x, y)
         feature_select.get_feats(x, y)
 
@@ -186,20 +192,22 @@ class ContentSelector:
             doc_sents = []
             a_doc = docs[document]
             index = 0
-            if len(a_doc) > 1:
-                doc_sents.append((a_doc[1], 1))
-                all_sents.append((a_doc[1], 1))
-            else:
-                doc_sents.append((a_doc[0], 1))
-                all_sents.append((a_doc[0], 1))
+            #if len(a_doc) > 1:
+            #    doc_sents.append((a_doc[1], 1))
+            #    all_sents.append((a_doc[1], 1))
+            #else:
+            #    doc_sents.append((a_doc[0], 1))
+            #    all_sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
+            sent_idx = 0
             for sentence in a_doc:
                 index += 1
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
-                    vec = self.vectorize(sentence, document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
+                    vec = self.vectorize(sentence, sent_idx, document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
                                          docs, back_list, vocab, back_list2, vocab2, first_p, all_p)
+                    sent_idx += 1
                     vec = vec.reshape(1, -1)
                     vec = self.scaler.transform(vec)
 

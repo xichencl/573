@@ -2,7 +2,6 @@ import re
 import nltk
 import math
 
-
 def get_rouge(sent, sum_bigs, sum_tri, sum_quad, sum_words):
     sent_words = nltk.word_tokenize(sent)
     sent_words_fd = nltk.FreqDist(sent_words)

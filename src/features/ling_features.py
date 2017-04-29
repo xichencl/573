@@ -17,6 +17,8 @@ def add_feats(docs, sent, vec):
     caps = re.findall('[A-Z]', sent)
     has_quote = bool('"' in sent)
     vec.append(int(has_quote))
+    commas = re.findall(',', sent)
+    vec.append(len(commas))
     vec.append(float(len(nums)) / len(sent))
     vec.append(float(len(caps)) / len(sent))
     vec.append(float(num_cap)/len(words))
