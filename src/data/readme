@@ -17,11 +17,6 @@ training.human.processed.json and devtest.human.processed.json are DUC 2009 and 
 The data is stored in a dictionary. 
 {topic id : {sum id: [[w1, w2...], [w1, w2...], [w1, w2...]...] }}
 
-training.peers.json and devtest.peers.json are automatically generated summary files submittedby 
-the contestants at the shared task event. 
-The data is stored in a dictionary. 
-{topic id : {sum id: sum text}}
-
 summbank.training.json contains the mutli-doc summary training/dev/test files for the MEAD project. 
 The data is stored in a dict. 
 {topic id : {doc id : [sent1, sent2, sent3...]}}
@@ -39,3 +34,5 @@ summbank.human_summaries.processed.json contains the human summaries for the sum
 The data is stored in a dict. 
 {topic id : {word limit ('50', '100', '200') : [[w1, w2...], [w1, w2...], [w1, w2...]...]}}
 
+training07.json, training07.processed.json: training data from DUC 2007 in the same format as training.json and training.processed.json.
+training07.human.json, training07.human.processed.json: human summaries from DUC 2007 in the same format as the 09 and 10 data. 
