@@ -35,16 +35,17 @@ class ContentSelector:
         except FileNotFoundError:
             pass
 
-    def vectorize(self, sentence, idx, document, tf_idfs, back_counts, cluster_counts, an_event, back_list, vocab, back_list2, vocab2,
+    def vectorize(self, sentence, idx, doc_len, document, tf_idfs, back_counts, cluster_counts, an_event, back_list, vocab, back_list2, vocab2,
                   first_p, all_p):
         vec = []
-        key = (sentence, document)
+        string = ' '.join(sentence)
+        key = (string, document)
         if key in self.vecs:
             vec = self.vecs[key]
         else:
             vec.extend(tf_idf.get_tf_idf_average(sentence, tf_idfs))
             vec.extend(llr.get_weight_sum(sentence, back_counts, cluster_counts))
-            vec.append(len(sentence.split()))
+            vec.append(len(sentence))
             vec = ling_features.add_feats(an_event, sentence, vec)
             vec.extend(kl.get_kl(sentence, back_list, vocab))
             vec.extend(kl_bigrams.get_kl(sentence, back_list2, vocab2))
@@ -53,6 +54,8 @@ class ContentSelector:
             vec.append(idx)
             vec = np.array(vec)
             self.vecs[key] = vec
+            vec_file = open('vecs.p', 'wb')
+            pickle.dump(self.vecs, vec_file)
         return vec
 
     # place any code that needs access to the gold standard summaries here
@@ -71,15 +74,23 @@ class ContentSelector:
                 self.cluster_info[event] = {}
                 tf_idfs = tf_idf.get_tf_idfs(an_event)
                 self.cluster_info[event]["tf_idf"] = tf_idfs
-                all_sums = ''
+                sum_words = []
                 for document in gold[event]:
                     if len(document) < 6 or document[6] == 'A':
                         a_sum = gold[event][document]
-                        if isinstance(a_sum, list):
-                            a_sum = ' '.join(a_sum)
-                        a_sum = re.sub('\n', ' ', a_sum)
-                        all_sums += a_sum + ' '
-                sum_words = nltk.word_tokenize(all_sums)
+                        new_sum = []
+                        for sent in a_sum:
+                            new_sent = []
+                            for word in sent:
+                                if isinstance(word, list):
+                                    for real_word in word:
+                                        sum_words.append(real_word)
+                                        new_sent.append(real_word)
+                                else:
+                                    sum_words.append(word)
+                                    new_sent.append(word)
+                            new_sum.append(new_sent)
+                        gold[event][document] = new_sum
                 self.cluster_info[event]["sum_words_fd"] = nltk.FreqDist(sum_words)
                 self.cluster_info[event]["sum_bigs"] = nltk.FreqDist(list(nltk.ngrams(sum_words, 2)))
                 self.cluster_info[event]["sum_tri"] = nltk.FreqDist(list(nltk.ngrams(sum_words, 3)))
@@ -119,11 +130,9 @@ class ContentSelector:
                 a_doc = an_event[document]
                 sent_idx = 0
                 for sentence in a_doc:
-                    sentence = re.sub('\n', ' ', sentence)
-
                     # construct a vector for each sentence in the document
-                    if 1 < len(sentence.split()):
-                        vec = self.vectorize(sentence, sent_idx, document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
+                    if 1 < len(sentence):
+                        vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
                                              an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)
                         sent_idx += 1
                         # Add additional features here
@@ -133,17 +142,13 @@ class ContentSelector:
             gold_sums = gold[event]
             for document in gold_sums:
                 if len(document) < 6 or document[6] == 'A':
-                    a_sum = gold_sums[document]
-                    if isinstance(a_sum, list):
-                        a_sum = ' '.join(a_sum)
-                    a_sum = re.sub('\n', ' ', a_sum)
+                    sents = gold_sums[document]
 
                     # construct a vector for each sentence in the summary
-                    sents = nltk.sent_tokenize(a_sum)
                     sent_idx = 0
                     for sentence in sents:
                         if len(sentence) > 1:
-                            vec = self.vectorize(sentence, sent_idx, document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
+                            vec = self.vectorize(sentence, sent_idx, len(a_sum),  document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
                                                  an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)
                             sent_idx += 1
                             # Add additional features here
@@ -158,25 +163,25 @@ class ContentSelector:
         self.model.fit(x, y)
         feature_select.get_feats(x, y)
 
-    def test(self, docs, name, query=None):
+    def test(self, docs, preproc, name, query=None):
         if name not in self.cluster_info:
             self.cluster_info[name] = {}
-            tf_idfs = tf_idf.get_tf_idfs(docs)
+            tf_idfs = tf_idf.get_tf_idfs(preproc)
             self.cluster_info[name]["tf_idf"] = tf_idfs
 
-            pos_results = position.get_positions(docs)
+            pos_results = position.get_positions(preproc)
             self.cluster_info[name]["first_p"] = pos_results[0]
             self.cluster_info[name]["all_p"] = pos_results[1]
 
-            kl_result = kl.get_freq_list(docs)
+            kl_result = kl.get_freq_list(preproc)
             self.cluster_info[name]["back_list"] = kl_result[0]
             self.cluster_info[name]["vocab"] = kl_result[1]
 
-            kl_result2 = kl_bigrams.get_freq_list(docs)
+            kl_result2 = kl_bigrams.get_freq_list(preproc)
             self.cluster_info[name]["back_list2"] = kl_result2[0]
             self.cluster_info[name]["vocab2"] = kl_result2[1]
 
-            self.cluster_info[name]["cluster_counts"] = llr.get_cluster_counts(docs)
+            self.cluster_info[name]["cluster_counts"] = llr.get_cluster_counts(preproc)
             cluster_file = open('cluster_info.p', 'wb')
             pickle.dump(self.cluster_info, cluster_file)
         sents = {}
@@ -191,21 +196,18 @@ class ContentSelector:
         for document in docs:
             doc_sents = []
             a_doc = docs[document]
+            proc_doc = preproc[document]
             index = 0
-            #if len(a_doc) > 1:
-            #    doc_sents.append((a_doc[1], 1))
-            #    all_sents.append((a_doc[1], 1))
-            #else:
-            #    doc_sents.append((a_doc[0], 1))
-            #    all_sents.append((a_doc[0], 1))
 
             # construct a vector for each sentence in the document
             sent_idx = 0
-            for sentence in a_doc:
+            for i in range(len(a_doc)):
+                sentence = a_doc[i]
+                proc_sent = proc_doc[i]
                 index += 1
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
-                    vec = self.vectorize(sentence, sent_idx, document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
+                    vec = self.vectorize(proc_sent, sent_idx, len(a_doc),  document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
                                          docs, back_list, vocab, back_list2, vocab2, first_p, all_p)
                     sent_idx += 1
                     vec = vec.reshape(1, -1)
@@ -215,6 +217,4 @@ class ContentSelector:
                     doc_sents.append((sentence, float(self.model.predict(vec))))
                     all_sents.append((sentence, float(self.model.predict(vec))))
             sents[document] = doc_sents
-        vec_file = open('vecs.p', 'wb')
-        pickle.dump(self.vecs, vec_file)
         return all_sents
