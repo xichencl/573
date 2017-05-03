@@ -78,19 +78,13 @@ class ContentSelector:
                 for document in gold[event]:
                     if len(document) < 6 or document[6] == 'A':
                         a_sum = gold[event][document]
-                        new_sum = []
                         for sent in a_sum:
-                            new_sent = []
                             for word in sent:
                                 if isinstance(word, list):
                                     for real_word in word:
                                         sum_words.append(real_word)
-                                        new_sent.append(real_word)
                                 else:
                                     sum_words.append(word)
-                                    new_sent.append(word)
-                            new_sum.append(new_sent)
-                        gold[event][document] = new_sum
                 self.cluster_info[event]["sum_words_fd"] = nltk.FreqDist(sum_words)
                 self.cluster_info[event]["sum_bigs"] = nltk.FreqDist(list(nltk.ngrams(sum_words, 2)))
                 self.cluster_info[event]["sum_tri"] = nltk.FreqDist(list(nltk.ngrams(sum_words, 3)))
@@ -142,7 +136,14 @@ class ContentSelector:
             gold_sums = gold[event]
             for document in gold_sums:
                 if len(document) < 6 or document[6] == 'A':
-                    sents = gold_sums[document]
+                    a_sum = gold_sums[document]
+                    sents = []
+                    if "Group" in event and document == "100":
+                        for one_sum in gold_sums[document]:
+                            for a_sent in one_sum:
+                                sents.append(a_sent)
+                    elif 'Group' not in event:
+                        sents = gold_sums[document]
 
                     # construct a vector for each sentence in the summary
                     sent_idx = 0
@@ -217,4 +218,4 @@ class ContentSelector:
                     doc_sents.append((sentence, float(self.model.predict(vec))))
                     all_sents.append((sentence, float(self.model.predict(vec))))
             sents[document] = doc_sents
-        return all_sents
+        return sents
