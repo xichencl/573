@@ -133,8 +133,8 @@ def get_cosine_sim_matrix(all_sentences, tf_idf_dict, threshold, basic):
     idx2sent = []
     idx = 0
     for s1, s2 in itertools.combinations_with_replacement(all_sentences, 2):
-        s1_str = str(s1)
-        s2_str = str(s2)
+        s1_str = ' '.join(s1)
+        s2_str = ' '.join(s2)
         if s1_str not in sent2idx:
             sent2idx[s1_str] = idx
             idx2sent.append(s1_str)
