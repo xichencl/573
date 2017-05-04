@@ -12,7 +12,7 @@ test_documents = json.load(open(sys.argv[3], 'r'))
 selector = ContentSelector.ContentSelector()
 selector.train(train_documents, gold)
 
-sorter = ContentSorter.ContentSorter();
+sorter = ContentSorter.ContentSorter()
 
 realizer = ContentRealizer.ContentRealizer()
 
