@@ -11,7 +11,7 @@ def get_tf_idfs(docs):
 
     for doc in docs:
         a_doc = docs[doc]
-        words = nltk.word_tokenize(' '.join(a_doc))
+        words = [item for sublist in a_doc for item in sublist]
         for word in words:
             if word in word_counts.keys():
                 word_counts[word] += 1
@@ -30,7 +30,7 @@ def get_tf_idfs(docs):
 
 def get_tf_idf_average(sent, tf_idfs):
     stop_sum = 0
-    words = nltk.word_tokenize(sent)
+    words = sent
     non_stops = 0
     for word in words:
         if word in tf_idfs.keys():

@@ -6,7 +6,7 @@ def get_positions(docs):
     for doc in docs:
         seen = set()
         a_doc = docs[doc]
-        words = nltk.word_tokenize(' '.join(a_doc))
+        words = [item for sublist in a_doc for item in sublist]
         index = 0
         for word in words:
             if word not in nltk.corpus.stopwords.words('english'):
@@ -24,7 +24,7 @@ def get_positions(docs):
 
 def score_sent(sent, first, all):
     data = [0, 0, 0]
-    words = nltk.word_tokenize(sent)
+    words = sent
     for word in sent:
         if word in first.keys() and word in all.keys():
             data[0] += float(min(first[word]))

@@ -9,7 +9,7 @@ def get_back_counts(all_docs):
         event_docs = all_docs[event]
         for event_doc in event_docs:
             a_doc = event_docs[event_doc]
-            words = nltk.word_tokenize(' '.join(a_doc))
+            words = [item for sublist in a_doc for item in sublist]
             for word in words:
                 if word in background_counts:
                     background_counts[word] += 1
@@ -22,7 +22,7 @@ def get_cluster_counts(cluster):
     cluster_counts = {}
     for doc in cluster:
         a_doc = cluster[doc]
-        words = nltk.word_tokenize(' '.join(a_doc))
+        words = [item for sublist in a_doc for item in sublist]
         for word in words:
             if word in cluster_counts.keys():
                 cluster_counts[word] += 1
@@ -33,8 +33,7 @@ def get_cluster_counts(cluster):
 
 def get_weight_sum(sentence, background_c, cluster_c):
     sent_sum = 0
-    non_stops = 0
-    words = nltk.word_tokenize(sentence)
+    words = sentence
     for word in words:
         if word in cluster_c.keys() and word in background_c.keys():
             k_one = cluster_c[word]
@@ -42,14 +41,12 @@ def get_weight_sum(sentence, background_c, cluster_c):
             n_one = len(cluster_c.keys())
             n_two = len(background_c.keys())
             p = float((k_one + k_two))/(n_one + n_two)
-            l_one = p ** (k_one * (1 - p)**(n_one - k_one))
-            l_two = p ** (k_two * (1 - p)**(n_two - k_two))
-            if l_one > 0 and l_two > 0:
-                final_log = -math.log(l_one) - math.log(l_two)
+            if p > 0 and (1 - p) > 0:
+                l_one = k_one * math.log(p) + (n_one - k_one) * math.log(1 - p)
+                l_two = k_two * math.log(p) + (n_two - k_two) * math.log(1 - p)
+                final_log = -l_one - l_two
             else:
                 final_log = 0
-            if word not in stops:
-                if final_log > 10:
-                    sent_sum += 1
-                non_stops += 1
-    return [sent_sum, float(sent_sum)/non_stops]
+            if final_log > 10:
+                sent_sum += 1
+    return [sent_sum, float(sent_sum)/len(words)]

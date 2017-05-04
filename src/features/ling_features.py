@@ -7,7 +7,8 @@ tagset = ['CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 
 
 # add linguistic information like POS and named entity probabilities
 def add_feats(docs, sent, vec):
-    words = nltk.word_tokenize(sent)
+    words = sent
+    sent = " ".join(sent)
     pos = nltk.pos_tag(words)
     num_cap = 0
     for word in words[1:]:
@@ -17,6 +18,8 @@ def add_feats(docs, sent, vec):
     caps = re.findall('[A-Z]', sent)
     has_quote = bool('"' in sent)
     vec.append(int(has_quote))
+    commas = re.findall(',', sent)
+    vec.append(len(commas))
     vec.append(float(len(nums)) / len(sent))
     vec.append(float(len(caps)) / len(sent))
     vec.append(float(num_cap)/len(words))

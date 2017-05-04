@@ -7,7 +7,7 @@ def get_freq_list(docs):
     back_fd = {}
     for doc in docs:
         a_doc = docs[doc]
-        words = nltk.word_tokenize(' '.join(a_doc))
+        words = [item for sublist in a_doc for item in sublist]
         for word in words:
             if word not in nltk.corpus.stopwords.words('english'):
                 if word in back_fd:
@@ -22,7 +22,7 @@ def get_freq_list(docs):
 
 
 def get_kl(sentence, back_list, vocab):
-    sent_words = nltk.word_tokenize(sentence)
+    sent_words = sentence
     fd = nltk.FreqDist(sent_words)
     sent_list = []
     for word in vocab:

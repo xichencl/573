@@ -7,7 +7,7 @@ def get_freq_list(docs):
     back_fd = {}
     for doc in docs:
         a_doc = docs[doc]
-        words = nltk.word_tokenize(' '.join(a_doc))
+        words = [item for sublist in a_doc for item in sublist]
         stems = []
         stemmer = nltk.stem.PorterStemmer()
         for word in words:
@@ -27,11 +27,7 @@ def get_freq_list(docs):
 
 
 def get_kl(sentence, back_list, vocab):
-    sent_words = nltk.word_tokenize(sentence)
-    stems = []
-    stemmer = nltk.stem.PorterStemmer()
-    for word in sent_words:
-        stems.append(stemmer.stem(word))
+    sent_words = sentence
     bigrams = nltk.ngrams(sent_words, 2)
     fd = nltk.FreqDist(bigrams)
     sent_list = []
