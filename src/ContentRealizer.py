@@ -22,7 +22,7 @@ class ContentRealizer:
             #cannot exceed length_limit
             if total_len >= length_limit:
                 break
-            if self.max_cosine_sim(i,result_indices,tfidf) < 1.0:
+            if self.max_cosine_sim(i,result_indices,tfidf) < 0.4:
                 result_indices.append(i);
                 total_len += len(sentences[i].split());
 
