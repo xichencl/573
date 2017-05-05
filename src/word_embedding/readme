@@ -1,0 +1,2 @@
+should put glove.6B.50d.txt here
+wget http://nlp.stanford.edu/data/glove.6B.zip
