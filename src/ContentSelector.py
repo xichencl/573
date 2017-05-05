@@ -260,4 +260,4 @@ class ContentSelector:
         if unseen:
             vec_file = open('vecs.p', 'wb')
             pickle.dump(self.vecs, vec_file)
-        return all_sents
+        return sents
