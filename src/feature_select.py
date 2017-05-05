@@ -15,14 +15,14 @@ def get_feats(x, y):
 
     labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR_sum', 'LLR', 'sent_len', 'quote', 'commas', 'P(num)', 'P(cap)', 'P(cap_word)', '#cap_word',
               'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ', 'sentiment', 'KL',
-              'KL_rev', 'KL_big', 'KL_big_rev', 'early_first', 'avg_first', 'avg_pos', 'is_first', 'idx']
+              'KL_rev', 'KL_big', 'KL_big_rev', 'early_first', 'avg_first', 'avg_pos', 'is_first', 'idx', 'lexrank']
     sorted_labels = []
 
     # Print the feature ranking
     print("Feature ranking:")
     for f in range(x.shape[1]):
         sorted_labels.append(labels[indices[f]])
-        print("%s %f" % (labels[indices[f]], importances[indices[f]]))
+        print("%s\t%f" % (labels[indices[f]], importances[indices[f]]))
 
     # Plot the feature importances of the forest
     plt.figure()

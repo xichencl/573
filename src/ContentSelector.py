@@ -5,6 +5,7 @@ from features import ling_features
 from features import kl
 from features import kl_bigrams
 from features import position
+from features import lexrank
 import random
 import feature_select
 import eval
@@ -36,7 +37,7 @@ class ContentSelector:
             pass
 
     def vectorize(self, sentence, idx, doc_len, document, tf_idfs, back_counts, cluster_counts, an_event, back_list, vocab, back_list2, vocab2,
-                  first_p, all_p):
+                  first_p, all_p, lexrank):
         vec = []
         string = ' '.join(sentence)
         key = (string, document)
@@ -52,10 +53,9 @@ class ContentSelector:
             vec.extend(position.score_sent(sentence, first_p, all_p))
             vec.append(int(idx < 1))
             vec.append(idx)
+            vec.append(lexrank)
             vec = np.array(vec)
             self.vecs[key] = vec
-            vec_file = open('vecs.p', 'wb')
-            pickle.dump(self.vecs, vec_file)
         return vec
 
     # place any code that needs access to the gold standard summaries here
@@ -69,8 +69,10 @@ class ContentSelector:
         x = []
         y = []
         for event in docs:
+            unseen = False
             an_event = docs[event]
             if event not in self.cluster_info:
+                unseen = True
                 self.cluster_info[event] = {}
                 tf_idfs = tf_idf.get_tf_idfs(an_event)
                 self.cluster_info[event]["tf_idf"] = tf_idfs
@@ -104,6 +106,27 @@ class ContentSelector:
 
                 self.cluster_info[event]["cluster_counts"] = llr.get_cluster_counts(an_event)
 
+                lex_results = lexrank.get_lexrank_scores(an_event, self.cluster_info[event]["tf_idf"], 0.1, 0.1,
+                                                             0.1, False)
+                self.cluster_info[event]["eigen"] = lex_results[0]
+                self.cluster_info[event]["sent2idx"] = lex_results[1]
+                if "Group" in event:
+                    sums = {}
+                    idx = 0
+                    for sum in gold[event]["100"]:
+                        sums[str(idx)] = sum
+                        idx += 1
+                    g_eigen, g_idx = lexrank.get_lexrank_scores(sums, self.cluster_info[event]["tf_idf"], 0.1, 0.1,
+                                                                0.1, False)
+                    self.cluster_info[event]["g_eigen"] = g_eigen
+                    self.cluster_info[event]["g_idx"] = g_idx
+
+                else:
+                    g_eigen, g_idx = lexrank.get_lexrank_scores(gold[event], self.cluster_info[event]["tf_idf"], 0.1, 0.1,
+                                                                0.1, False)
+                    self.cluster_info[event]["g_eigen"] = g_eigen
+                    self.cluster_info[event]["g_idx"] = g_idx
+
                 cluster_file = open('cluster_info.p', 'wb')
                 pickle.dump(self.cluster_info, cluster_file)
             sum_words_fd = self.cluster_info[event]["sum_words_fd"]
@@ -120,6 +143,11 @@ class ContentSelector:
             back_list2 = self.cluster_info[event]["back_list2"]
             vocab2 = self.cluster_info[event]["vocab2"]
             cluster_counts = self.cluster_info[event]["cluster_counts"]
+            eigen = self.cluster_info[event]["eigen"]
+            sent2idx = self.cluster_info[event]["sent2idx"]
+            g_eigen = self.cluster_info[event]["g_eigen"]
+            g_idx = self.cluster_info[event]["g_idx"]
+
             for document in an_event:
                 a_doc = an_event[document]
                 sent_idx = 0
@@ -127,7 +155,7 @@ class ContentSelector:
                     # construct a vector for each sentence in the document
                     if 1 < len(sentence):
                         vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
-                                             an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)
+                                             an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[str(sentence)]])
                         sent_idx += 1
                         # Add additional features here
                         x.append(vec)
@@ -150,12 +178,14 @@ class ContentSelector:
                     for sentence in sents:
                         if len(sentence) > 1:
                             vec = self.vectorize(sentence, sent_idx, len(a_sum),  document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
-                                                 an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)
+                                                 an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, g_eigen[g_idx[str(sentence)]])
                             sent_idx += 1
                             # Add additional features here
                             x.append(vec)
                             y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, sum_words_fd))
-
+            if unseen:
+                vec_file = open('vecs.p', 'wb')
+                pickle.dump(self.vecs, vec_file)
         self.scaler.fit(x)
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
@@ -165,7 +195,9 @@ class ContentSelector:
         feature_select.get_feats(x, y)
 
     def test(self, docs, preproc, name, query=None):
+        unseen = False
         if name not in self.cluster_info:
+            unseen = True
             self.cluster_info[name] = {}
             tf_idfs = tf_idf.get_tf_idfs(preproc)
             self.cluster_info[name]["tf_idf"] = tf_idfs
@@ -183,6 +215,11 @@ class ContentSelector:
             self.cluster_info[name]["vocab2"] = kl_result2[1]
 
             self.cluster_info[name]["cluster_counts"] = llr.get_cluster_counts(preproc)
+
+            lex_results = lexrank.get_lexrank_scores(docs, self.cluster_info[name]["tf_idf"], 0.1, 0.1,
+                                                     0.1, False)
+            self.cluster_info[name]["eigen"] = lex_results[0]
+            self.cluster_info[name]["sent2idx"] = lex_results[1]
             cluster_file = open('cluster_info.p', 'wb')
             pickle.dump(self.cluster_info, cluster_file)
         sents = {}
@@ -194,6 +231,8 @@ class ContentSelector:
         vocab2 = self.cluster_info[name]["vocab2"]
         first_p = self.cluster_info[name]["first_p"]
         all_p = self.cluster_info[name]["all_p"]
+        eigen = self.cluster_info[name]["eigen"]
+        sent2idx = self.cluster_info[name]["sent2idx"]
         for document in docs:
             doc_sents = []
             a_doc = docs[document]
@@ -209,7 +248,7 @@ class ContentSelector:
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
                     vec = self.vectorize(proc_sent, sent_idx, len(a_doc),  document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
-                                         docs, back_list, vocab, back_list2, vocab2, first_p, all_p)
+                                         docs, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[str(proc_sent)]])
                     sent_idx += 1
                     vec = vec.reshape(1, -1)
                     vec = self.scaler.transform(vec)
@@ -218,4 +257,7 @@ class ContentSelector:
                     doc_sents.append((sentence, float(self.model.predict(vec))))
                     all_sents.append((sentence, float(self.model.predict(vec))))
             sents[document] = doc_sents
-        return sents
+        if unseen:
+            vec_file = open('vecs.p', 'wb')
+            pickle.dump(self.vecs, vec_file)
+        return all_sents
