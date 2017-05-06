@@ -89,9 +89,9 @@ def get_lexrank_scores(an_event, tf_idf_dict, threshold, error, damping_factor, 
     """
     all_sentences = []
     for doc in an_event.values():
-#         all_sentences += doc
-        #try unempty sentences only
-        all_sentences+=[s for s in doc if s]
+        all_sentences += doc
+#         #try unempty sentences only
+#         all_sentences+=[s for s in doc if s]
             
     cos_matrix, sent2idx, degree = get_cosine_sim_matrix(all_sentences, tf_idf_dict, threshold, basic)
     if basic:
@@ -133,8 +133,8 @@ def get_cosine_sim_matrix(all_sentences, tf_idf_dict, threshold, basic):
     idx2sent = []
     idx = 0
     for s1, s2 in itertools.combinations_with_replacement(all_sentences, 2):
-        s1_str = str(s1)
-        s2_str = str(s2)
+        s1_str = ' '.join(s1)
+        s2_str = ' '.join(s2)
         if s1_str not in sent2idx:
             sent2idx[s1_str] = idx
             idx2sent.append(s1_str)
@@ -195,4 +195,6 @@ def get_transition_kernel(cos_matrix, damping_factor):
     square_matrix.fill(1.0/n)
     transition_kernel = damping_factor*square_matrix + (1-damping_factor)*cos_matrix
     return transition_kernel 
+
+test_lexrank(r'C:\Users\xichentop\workspace\573\project\573\src\data\training.processed.json')
 
