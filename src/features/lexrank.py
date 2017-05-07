@@ -174,8 +174,9 @@ def get_cosine_sim_matrix(all_sentences, tf_idf_dict, threshold, basic):
                     degree[s1_idx] = 0
                 degree[s1_idx]+=1
         else:
-            s1_idx = sent2idx[s1_str]
-            cos_matrix[s1_idx, sent2idx[s2_str]] = cos_sim
+            if cos_sim>threshold:
+                s1_idx = sent2idx[s1_str]
+                cos_matrix[s1_idx, sent2idx[s2_str]] = cos_sim
 #             if s1_idx not in degree:
 #                 degree[s1_idx] = 0
 #             degree[s1_idx]+=1
