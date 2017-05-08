@@ -18,24 +18,26 @@ import operator
 
 stops = set(nltk.corpus.stopwords.words('english'))
 
-def get_lexrank_query(file, topic_dict, topic, query):
+def get_lexrank_query(file, topic_dict, query):
     '''
     @param file: the json file to be loaded
-    @topic_dict: a dict mapping topics to topic_ids 
-    @param topic: the topic to be queried
-    @param query: query string
+    @topic_dict: the json file for a dict mapping topics to topic_ids 
+#     @param topic: the topic to be queried
+    @param query: query string corresponding to the cluster topic or the'title' section in xml file
     '''
     #find topic_id
-    topic= topic.lower()
-    if topic in topic_dict:
-        topic_id = topic_dict[topic]
+    topic_dict = json.load(open(topic_dict, 'r'))
+    query= query.lower()
+    if query in topic_dict:
+        topic_id = topic_dict[query]
     else:
-        sys.stderr.print("There's no such topic.")
+        sys.stderr.print("There's no data related to the query.")
         exit()
     
     all_docs = json.load(open(file, 'r'))
+    
     #process query
-    query = [word for word in query.lower().split() if word not in stops and re.match('\w', word)]
+    query = [word for word in query.split() if word not in stops and re.match('\w', word)]
     lemmatizer = nltk.stem.WordNetLemmatizer()
     tags = nltk.pos_tag(query)
     idx = 0
@@ -51,11 +53,12 @@ def get_lexrank_query(file, topic_dict, topic, query):
     tf_idf_dict = get_tf_idfs(all_docs[topic_id])
     lexrank_scores, sent2idx = get_lexrank_scores(all_docs[topic_id], tf_idf_dict, rel_scores, 0.2, 0.1, 0.95, False)
     rel_sents = {}
-    rel_sents[topic] = []
+    query = ' '.join(query)
+    rel_sents[query] = []
     for sent in sent2idx:
         idx = sent2idx[sent]
-        rel_sents[topic].append((sent, lexrank_scores[idx]))
-    sorted_lexrank = sorted(rel_sents[topic].items(), key=operator.itemgetter(1), reverse=True)
+        rel_sents[query].append((sent, lexrank_scores[idx]))
+    sorted_lexrank = sorted(rel_sents[query], key=operator.itemgetter(1), reverse=True)
     return sorted_lexrank
 
     
@@ -153,14 +156,14 @@ def power_method(cos_matrix, error):
     v1 = np.zeros(len(cos_matrix))
     v1.fill(1.0/len(cos_matrix)) 
     delta = 1.0
-    idx = 0
+#     idx = 0
     while delta >= error:
         v2 = np.dot(cos_matrix.T, v1)
-        print(str(idx)+'iteration, vector: ', v2)
+#         print(str(idx)+'iteration, vector: ', v2)
         
         delta = np.linalg.norm(np.subtract(v2,v1))
-        print(str(idx)+'iteration, delta: ', delta)
-        idx+=1
+#         print(str(idx)+'iteration, delta: ', delta)
+#         idx+=1
         v1 = v2
 #     print(v1)
     return v1
@@ -284,24 +287,27 @@ def get_transition_kernel(cos_matrix, rel_scores, damping_factor):
     n = len(cos_matrix)
     square_matrix = np.zeros(shape=(n, n))
     rel_scores /= rel_scores.sum()
-    print('normalized rel-scores: ', rel_scores)
+#     print('normalized rel-scores: ', rel_scores)
     for i in range(n):
         square_matrix[i] = rel_scores
     transition_kernel = damping_factor*square_matrix + (1-damping_factor)*cos_matrix
     return transition_kernel 
 
 def test_lexrank_query():
-    json_file = r'C:\Users\xichentop\workspace\573\project\573\src\data\training.processed.json'
-    dict = json.load(open(json_file, 'r'))
-    rel_scores, sentences = get_rel_scores(dict['D0917C'], ['who', 'new', 'pope'])
-    print('rel scores: ', rel_scores)
-    tf_idf_dict = get_tf_idfs(dict['D0917C'])
-    lexrank_scores, sent2idx = get_lexrank_scores(dict['D0917C'], tf_idf_dict, rel_scores, 0.1, 0.1, 0.5, False)
-    rel_sents = []
-    for sent in sent2idx:
-        idx = sent2idx[sent]
-        rel_sents.append((sent, lexrank_scores[idx]))
-    sorted_lexrank = sorted(rel_sents, key=operator.itemgetter(1), reverse=True)
+    training_json_file = r'C:\Users\xichentop\workspace\573\project\573\src\data\training.processed.json'
+    topic_dict_file = r'C:\Users\xichentop\workspace\573\project\573\src\data\training.topic_dict.json'
+#     cluster = json.load(open(training_json_file, 'r'))
+#     topic_dict = json.load(open(topic_dict_file, 'r'))
+#     rel_scores, sentences = get_rel_scores(cluster['D0917C'], ['who', 'new', 'pope'])
+#     print('rel scores: ', rel_scores)
+#     tf_idf_dict = get_tf_idfs(dict['D0917C'])
+#     lexrank_scores, sent2idx = get_lexrank_scores(dict['D0917C'], tf_idf_dict, rel_scores, 0.1, 0.1, 0.5, False)
+#     rel_sents = []
+#     for sent in sent2idx:
+#         idx = sent2idx[sent]
+#         rel_sents.append((sent, lexrank_scores[idx]))
+#     sorted_lexrank = sorted(rel_sents, key=operator.itemgetter(1), reverse=True)
+    sorted_lexrank = get_lexrank_query(training_json_file, topic_dict_file, 'pope election')
     for sent, score in sorted_lexrank:
         print(sent, score)
 #     idx = 0
