@@ -315,4 +315,4 @@ def test_lexrank_query():
 #         if score != 0.0:
 #             print(sentences[idx], score) 
 #         idx+=1
-test_lexrank_query()
+# test_lexrank_query()
