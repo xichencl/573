@@ -55,7 +55,7 @@ class ContentSelector:
             vec.extend(position.score_sent(sentence, first_p, all_p))
             vec.append(int(idx < 1))
             vec.append(idx)
-            #vec.append(lexrank)
+            vec.append(lexrank)
             vec = np.array(vec)
             self.vecs[key] = vec
         '''if math.isnan(q_lex):
@@ -171,7 +171,7 @@ class ContentSelector:
                     # construct a vector for each sentence in the document
                     if 1 < len(sentence):
                         vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
-                                             an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)#, eigen[sent2idx[str(sentence)]])
+                                             an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[str(sentence)]])
                         sent_idx += 1
                         # Add additional features here
                         x.append(vec)
@@ -194,7 +194,7 @@ class ContentSelector:
                     for sentence in sents:
                         if len(sentence) > 1:
                             vec = self.vectorize(sentence, sent_idx, len(a_sum),  document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
-                                                 an_event, back_list, vocab, back_list2, vocab2, first_p, all_p)#, g_eigen[g_idx[str(sentence)]])
+                                                 an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, g_eigen[g_idx[str(sentence)]])
                             sent_idx += 1
                             # Add additional features here
                             x.append(vec)
