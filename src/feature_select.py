@@ -15,7 +15,7 @@ def get_feats(x, y):
 
     labels = ['tf_idf_sum', 'tf_idf_avg', 'LLR_sum', 'LLR', 'sent_len', 'quote', 'commas', 'P(num)', 'P(cap)', 'P(cap_word)', '#cap_word',
               'CC', 'DT', 'IN', 'JJ', 'NN', 'NNS', 'NNP', 'PRP', 'RB', 'VB', 'VBD', 'VBN', 'VBP', 'VBZ', 'sentiment', 'KL',
-              'KL_rev', 'KL_big', 'KL_big_rev', 'early_first', 'avg_first', 'avg_pos', 'is_first', 'idx', 'lexrank']
+              'KL_rev', 'KL_big', 'KL_big_rev', 'early_first', 'avg_first', 'avg_pos', 'is_first', 'idx', 'lexrank', 'q_lexrank']
     sorted_labels = []
 
     # Print the feature ranking

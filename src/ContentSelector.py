@@ -6,6 +6,7 @@ from features import kl
 from features import kl_bigrams
 from features import position
 from features import lexrank
+import Query
 import random
 import feature_select
 import eval
@@ -16,6 +17,7 @@ import numpy as np
 import math
 import nltk
 import pickle
+import json
 
 
 class ContentSelector:
@@ -56,6 +58,10 @@ class ContentSelector:
             vec.append(lexrank)
             vec = np.array(vec)
             self.vecs[key] = vec
+        '''if math.isnan(q_lex):
+            vec = np.append(vec, 0)
+        else:
+            vec = np.append(vec, q_lex)'''
         return vec
 
     # place any code that needs access to the gold standard summaries here
@@ -133,6 +139,16 @@ class ContentSelector:
             sum_bigs = self.cluster_info[event]["sum_bigs"]
             sum_tri = self.cluster_info[event]["sum_tri"]
             sum_quad = self.cluster_info[event]["sum_quad"]
+
+            '''topics = json.load(open('/Users/mackie/PycharmProjects/573/src/data/training.topic_dict.reverse.json', 'r'))
+            query = topics[event]
+            rel_scores, sentences = Query.get_rel_scores(an_event, query.split())
+            q_lex, q_sent2idx = Query.get_lexrank_scores(an_event, self.cluster_info[event]["tf_idf"], rel_scores, 0.2, 0.1, 0.95,
+                                                          False)
+            g_rel_scores, g_sentences = Query.get_rel_scores(gold[event], query.split())
+            g_q_lex, g_q_sent2idx = Query.get_lexrank_scores(gold[event], self.cluster_info[event]["tf_idf"], g_rel_scores, 0.2,
+                                                         0.1, 0.95,
+                                                         False)'''
 
             print('Processing Cluster ' + str(event_ind) + '/' + str(len(docs)))
             event_ind += 1
@@ -233,6 +249,14 @@ class ContentSelector:
         all_p = self.cluster_info[name]["all_p"]
         eigen = self.cluster_info[name]["eigen"]
         sent2idx = self.cluster_info[name]["sent2idx"]
+
+        '''topics = json.load(open('/Users/mackie/PycharmProjects/573/src/data/training.topic_dict.reverse.json', 'r'))
+        query = topics[name]
+        rel_scores, sentences = Query.get_rel_scores(docs, query.split())
+        q_lex, q_sent2idx = Query.get_lexrank_scores(docs, self.cluster_info[name]["tf_idf"], rel_scores, 0.2, 0.1,
+                                                     0.95,
+                                                     False)'''
+
         for document in docs:
             doc_sents = []
             a_doc = docs[document]
@@ -260,4 +284,4 @@ class ContentSelector:
         if unseen:
             vec_file = open('vecs.p', 'wb')
             pickle.dump(self.vecs, vec_file)
-        return sents
+        return all_sents
