@@ -1,7 +1,6 @@
 import json
 import ContentSelector
 import ContentRealizer
-import ContentSorter
 import sys
 import re
 
@@ -13,8 +12,6 @@ proc_test = json.load(open(sys.argv[4], 'r'))
 selector = ContentSelector.ContentSelector()
 selector.train(train_documents, gold)
 
-sorter = ContentSorter.ContentSorter()
-
 realizer = ContentRealizer.ContentRealizer()
 
 index = 0
@@ -24,7 +21,6 @@ for event in test_documents:
     proc_event = proc_test[event]
     print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
     results = selector.test(an_event, proc_event, event, 10)
-    sorter.sort(results);
     picked = realizer.realize(results, 100)
     summary = re.sub('\W+', ' ', ' '.join(picked))
     letter = event[-1]
