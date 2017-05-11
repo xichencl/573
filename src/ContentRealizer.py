@@ -2,7 +2,6 @@ import nltk, string
 from sklearn.feature_extraction.text import TfidfVectorizer
 import GloveTextVectorizer
 import LabelMarker
-import itertools
 
 
 class ContentRealizer:
@@ -11,6 +10,14 @@ class ContentRealizer:
         self.remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
         self.tfidf_vectorizer = TfidfVectorizer(tokenizer=self.normalize, stop_words='english')
         self.glove_vectorizer = GloveTextVectorizer.GloveTextVectorizer("./word_embedding/glove.6B.50d.txt")
+
+        self.TEXT                 = 0
+        self.SCORE                = 1
+        self.ARTICLE              = 2
+        self.NTH_SENT             = 3
+        self.PUB_DATE             = 4
+        self.GLOBAL_SENT_ID       = 5
+        self.SENT_GROUP_ID        = 6
         return
 
     # pick up input sentences by their scores
@@ -18,9 +25,8 @@ class ContentRealizer:
     # return: picked sentences
     def realize(self, _sentences, length_limit):
         # convert sentences
-        # article_sentence_map  ->  {article_name: [global_sentence_id[0], global_sentence_id[1], ...]}
-        # id_sentence_map       ->  {global_sent_id : [text, score, article_name, nth_sentence, publish_date, global_sent_id, sentence_group_idx]}
-        article_sentence_map,id_sentence_map  = self.convert_sentences(_sentences)
+        # id_sentence_map ->  {global_sent_id : [text, score, article_name, nth_sentence, publish_date, global_sent_id, sentence_group_idx]}
+        id_sentence_map  = self.convert_sentences(_sentences)
 
         # sort sentences desc according to score
         sentences = list(id_sentence_map.values())
@@ -41,54 +47,57 @@ class ContentRealizer:
         #clustering labels
         labels = marker.label(sentence_vectors, labels)
         for i in range(0,len(labels)):
-            id_sentence_map[sentences[i][5]][6] = labels[i]
+            id_sentence_map[sentences[i][self.GLOBAL_SENT_ID]][self.SENT_GROUP_ID] = labels[i]
 
+        #C[i,j] = freq(i,j)^2 / (freq(i)* freq(j))
+        adjacent_matrix = self.calc_adjacent_matrix(id_sentence_map, labels, len(result_global_indices), window_size = 2)
 
-        #TODO: C[i,j] = freq(i,j)^2 / (freq(i)* freq(j))
-        co_matrix = self.calc_adjacent_matrix(article_sentence_map, id_sentence_map, labels, window_size = 5)
+        #greedy sorting by adjacency
+        result = [id_sentence_map[idx] for idx in result_global_indices]
+        #the first sentence in the first passage as boosting
+        #TODO: replace with groups with most BOS adjacent
+        result.sort(key = lambda x: (x[self.PUB_DATE],x[self.GLOBAL_SENT_ID]))
 
+        for i in range(1,len(result)-1):
+            #   then pick arg mx(C[i,j])
+            class_idx1 = result[i-1][self.SENT_GROUP_ID]
+            # sort by group prob
+            result[i:] = sorted(result[i:], key=lambda x: adjacent_matrix[class_idx1][x[self.SENT_GROUP_ID]], reverse=True)
 
-        #always pick the first sentence of first article
-        #then pick arg mx(C[i,j])
-
-        results = list()
-        for index in result_global_indices:
-            results.append(sentences[index][0])
-        return results
+        return [s[0] for s in result]
 
     # C[i,j] = freq(i,j)^2 / (freq(i)* freq(j))
     # article_sentence_map  ->  {article_name: [global_sentence_id[0], global_sentence_id[1], ...]}
     # id_sentence_map       ->  {global_sent_id : [text, score, article_name, nth_sentence, publish_date, global_sent_id, sentence_group_idx]}
-    def calc_adjacent_matrix(self, article_sentence_map, id_sentence_map, labels, window_size):
+    def calc_adjacent_matrix(self, id_sentence_map, labels, categories_of_labels, window_size):
 
         #freq(i)
-        uniclass_freq = [0]*len(labels)
+        uniclass_freq = [0] * categories_of_labels
         for idx in range(0,len(labels)):
             uniclass_freq[labels[idx]] += 1
-        uniclass_freq = [f/len(labels) for f in  uniclass_freq]
 
         #freq(i,j)
-        biclass_freq = [[0] * len(labels)] * len(labels)
-        article_sentence_list = list(article_sentence_map.items())
-        article_sentence_list = sorted(article_sentence_list, key=lambda x: x[0], reverse=True)
+        import numpy as np
+        biclass_freq = np.array([[0]*categories_of_labels]*categories_of_labels)
         id_sentence_list = list(id_sentence_map.items())
-        id_sentence_list = sorted(id_sentence_list, key=lambda x: x[0], reverse=True)
+        id_sentence_list = sorted(id_sentence_list, key=lambda x: x[0], reverse=False)
 
-        for label_idx in labels:
-            for article in article_sentence_list:
-                for i in range(0,article):
-                    sentence_id = article[i]
-                    if id_sentence_list[sentence_id][6] == label_idx:
-                        sentence_id_slice = article[i-window_size:i+window_size+1]
-                        for idx in sentence_id_slice:
-                            biclass_freq[label_idx][idx] += 1
-                            biclass_freq[idx][label_idx] += 1
+        for label_idx in range(0,categories_of_labels):
+                for i in range(0,len(id_sentence_list)):
+                    if id_sentence_list[i][1][self.SENT_GROUP_ID] == label_idx:
+                        id_sentence_slice = id_sentence_list[i-window_size:i+window_size+1]
+                        for id_sentence_tuple in id_sentence_slice:
+                            #same article adjacent, not the same sentence
+                            if id_sentence_tuple[1][self.ARTICLE] == id_sentence_list[i][1][self.ARTICLE] \
+                                    and id_sentence_tuple[1][self.GLOBAL_SENT_ID] != id_sentence_list[i][1][self.GLOBAL_SENT_ID]:
+                                label_idx2 = id_sentence_tuple[1][self.SENT_GROUP_ID]
+                                biclass_freq[label_idx][label_idx2] += 1
 
         #C[i,j] = freq(i,j)^2 / (freq(i)* freq(j))
-        adjacent = [[0] * len(labels)] * len(labels)
-        for i in range(0,len(labels)):
-            for j in range(0, len(labels)):
-                adjacent[i][j] = (biclass_freq[i][j]*biclass_freq[i][j])/(uniclass_freq(i)*uniclass_freq(j))
+        adjacent = np.array([[0.0] * categories_of_labels] * categories_of_labels)
+        for i in range(0,categories_of_labels):
+            for j in range(0, categories_of_labels):
+                adjacent[i][j] = float((biclass_freq[i][j]*biclass_freq[i][j]))/float((uniclass_freq[i]*uniclass_freq[j]))
 
         return adjacent
 
@@ -103,14 +112,12 @@ class ContentRealizer:
             if self.max_cosine_sim(i, result_indices, tfidf) < 0.4:
                 result_indices.append(i)
                 total_len += len(sentences[i][0].split())
+        #get global idx
+        global_result_indices = [sentences[idx][self.GLOBAL_SENT_ID] for idx in result_indices]
+        return global_result_indices
 
-        result_indices = [sentences[5] for idx in result_indices]
-        return result_indices
-
-    # article_sentence_map  ->  {article_name: [global_sentence_id[0], global_sentence_id[1], ...]}
     # id_sentence_map       ->  {global_sent_id : [text, score, article_name, nth_sentence, publish_date, global_sent_id, sentence_group_idx]}
     def convert_sentences(self, _sentences):
-        article_sentence_map = {}
         id_sentence_map = {}
 
         global_index = 0
@@ -118,13 +125,10 @@ class ContentRealizer:
             sentence_list = _sentences[article_name]
             for i in range(0, len(sentence_list)):
                 sentence_tuple = sentence_list[i]
-                if article_name not in article_sentence_map:
-                    article_sentence_map[article_name] = list()
-                article_sentence_map[article_name].append(global_index)
-                id_sentence_map[global_index] = (sentence_tuple[0], sentence_tuple[1], article_name, i, int(float(article_name.split('_')[2])), global_index)
+                id_sentence_map[global_index] = [sentence_tuple[0], sentence_tuple[1], article_name, i, int(float(article_name.split('_')[2])), global_index, -1]
                 global_index += 1
 
-        return (article_sentence_map,id_sentence_map)
+        return id_sentence_map
 
     def stem_tokens(self, tokens):
         return [self.stemmer.stem(item) for item in tokens]
