@@ -4,7 +4,7 @@ import numpy as np
 
 EMBEDDING_DIM = 50
 
-class TextVectorizer:
+class GloveTextVectorizer:
     #build vectorizer from glove embedding file
     def __init__(self, glove_file_location):
         self.stemmer = nltk.stem.porter.PorterStemmer()
