@@ -18,48 +18,67 @@ import operator
 
 stops = set(nltk.corpus.stopwords.words('english'))
 
-def get_lexrank_query(file, topic_dict, query):
+def get_lexrank_query(proc_file, orig_file, topic_dict):
     '''
-    @param file: the json file to be loaded
+    @param proc_file: the processed json file 
+    @param orig_file: the unprocessed json file 
     @topic_dict: the json file for a dict mapping topics to topic_ids 
 #     @param topic: the topic to be queried
-    @param query: query string corresponding to the cluster topic or the'title' section in xml file
+#     @param topic: topic string corresponding to the cluster topic or the'title' section in xml file
     '''
-    #find topic_id
     topic_dict = json.load(open(topic_dict, 'r'))
-    query= query.lower()
-    if query in topic_dict:
-        topic_id = topic_dict[query]
-    else:
-        sys.stderr.print("There's no data related to the query.")
-        exit()
+    proc_docs = json.load(open(proc_file, 'r'))
+    orig_docs = json.load(open(orig_file, 'r'))
     
-    all_docs = json.load(open(file, 'r'))
+    proc_to_orig = {}
+    for topic_id in proc_docs:
+        for doc_id in proc_docs[topic_id]:
+            sents = proc_docs[topic_id][doc_id]
+            for i in range(len(sents)):
+                proc_to_orig[' '.join(sents[i])] = orig_docs[topic_id][doc_id][i]    
     
-    #process query
-    query = [word for word in query.split() if word not in stops and re.match('\w', word)]
-    lemmatizer = nltk.stem.WordNetLemmatizer()
-    tags = nltk.pos_tag(query)
-    idx = 0
-    for w, t in tags:
-        if t.startswith('V'):
-            query[idx] = lemmatizer.lemmatize(w, 'v')
-        elif t.startswith('N'):
-            query[idx] = lemmatizer.lemmatize(w, 'n')
-        idx+=1
+#     for p in proc_to_orig:
+#         print(p, proc_to_orig[p])
     
-    
-    rel_scores, sentences = get_rel_scores(all_docs[topic_id], query)
-    tf_idf_dict = get_tf_idfs(all_docs[topic_id])
-    lexrank_scores, sent2idx = get_lexrank_scores(all_docs[topic_id], tf_idf_dict, rel_scores, 0.2, 0.1, 0.95, False)
     rel_sents = {}
-    query = ' '.join(query)
-    rel_sents[query] = []
-    for sent in sent2idx:
-        idx = sent2idx[sent]
-        rel_sents[query].append((sent, lexrank_scores[idx]))
-    sorted_lexrank = sorted(rel_sents[query], key=operator.itemgetter(1), reverse=True)
-    return sorted_lexrank
+    for topic in topic_dict:
+        topic_id = topic_dict[topic]
+#     topic= topic.lower()
+#     if topic in topic_dict:
+#         topic_id = topic_dict[topic]
+#     else:
+#         sys.stderr.print("There's no data related to the topic.")
+#         exit()
+    
+    
+    
+        #process topic
+        orig_topic = topic
+        topic = [word for word in topic.split() if word not in stops and re.match('\w', word)]
+        lemmatizer = nltk.stem.WordNetLemmatizer()
+        tags = nltk.pos_tag(topic)
+        idx = 0
+        for w, t in tags:
+            if t.startswith('V'):
+                topic[idx] = lemmatizer.lemmatize(w, 'v')
+            elif t.startswith('N'):
+                topic[idx] = lemmatizer.lemmatize(w, 'n')
+            idx+=1
+    
+        
+        rel_scores, sentences = get_rel_scores(proc_docs[topic_id], topic)
+        tf_idf_dict = get_tf_idfs(proc_docs[topic_id])
+        lexrank_scores, sent2idx = get_lexrank_scores(proc_docs[topic_id], tf_idf_dict, rel_scores, 0.2, 0.1, 0.95, False)
+        
+#         rel_sents[orig_topic] = []
+        sents = []
+        for sent in sent2idx:
+            idx = sent2idx[sent]
+            orig_sent = proc_to_orig[sent]
+            sents.append((orig_sent, lexrank_scores[idx]))
+        sorted_lexrank = sorted(sents, key=operator.itemgetter(1), reverse=True)
+        rel_sents[orig_topic] = sorted_lexrank
+    return rel_sents
 
     
     
@@ -293,26 +312,4 @@ def get_transition_kernel(cos_matrix, rel_scores, damping_factor):
     transition_kernel = damping_factor*square_matrix + (1-damping_factor)*cos_matrix
     return transition_kernel 
 
-def test_lexrank_query():
-    training_json_file = r'C:\Users\xichentop\workspace\573\project\573\src\data\training.processed.json'
-    topic_dict_file = r'C:\Users\xichentop\workspace\573\project\573\src\data\training.topic_dict.json'
-#     cluster = json.load(open(training_json_file, 'r'))
-#     topic_dict = json.load(open(topic_dict_file, 'r'))
-#     rel_scores, sentences = get_rel_scores(cluster['D0917C'], ['who', 'new', 'pope'])
-#     print('rel scores: ', rel_scores)
-#     tf_idf_dict = get_tf_idfs(dict['D0917C'])
-#     lexrank_scores, sent2idx = get_lexrank_scores(dict['D0917C'], tf_idf_dict, rel_scores, 0.1, 0.1, 0.5, False)
-#     rel_sents = []
-#     for sent in sent2idx:
-#         idx = sent2idx[sent]
-#         rel_sents.append((sent, lexrank_scores[idx]))
-#     sorted_lexrank = sorted(rel_sents, key=operator.itemgetter(1), reverse=True)
-    sorted_lexrank = get_lexrank_query(training_json_file, topic_dict_file, 'pope election')
-    for sent, score in sorted_lexrank:
-        print(sent, score)
-#     idx = 0
-#     for score in rel_scores:
-#         if score != 0.0:
-#             print(sentences[idx], score) 
-#         idx+=1
-test_lexrank_query()
+
