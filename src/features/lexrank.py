@@ -195,7 +195,4 @@ def get_transition_kernel(cos_matrix, damping_factor):
     square_matrix = np.zeros(shape=(n, n))
     square_matrix.fill(1.0/n)
     transition_kernel = damping_factor*square_matrix + (1-damping_factor)*cos_matrix
-    return transition_kernel 
-
-test_lexrank(r'C:\Users\xichentop\workspace\573\project\573\src\data\training.processed.json')
-
+    return transition_kernel
