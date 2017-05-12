@@ -6,6 +6,7 @@ from features import kl
 from features import kl_bigrams
 from features import position
 from features import lexrank
+from features import q_kl
 import Query
 import random
 import feature_select
@@ -40,7 +41,7 @@ class ContentSelector:
             pass
 
     def vectorize(self, sentence, idx, doc_len, document, tf_idfs, back_counts, cluster_counts, an_event, back_list, vocab, back_list2, vocab2,
-                  first_p, all_p, lexrank, q_lex):
+                  first_p, all_p, lexrank, q_lex, query):
         vec = []
         string = ' '.join(sentence)
         key = (string, document)
@@ -57,9 +58,10 @@ class ContentSelector:
             vec.append(int(idx < 1))
             vec.append(idx)
             vec.append(lexrank)
+            vec.append(q_lex)
+            vec.extend(q_kl.get_kl(sentence, query.split()))
             vec = np.array(vec)
             self.vecs[key] = vec
-        vec = np.append(vec, q_lex)
         return vec
 
     # place any code that needs access to the gold standard summaries here
@@ -174,14 +176,18 @@ class ContentSelector:
             g_q_lex = self.cluster_info[event]['g_q_lex']
             g_q_sent2idx = self.cluster_info[event]['g_q_sent2idx']
 
+            topics = json.load(open('../src/data/training.topic_dict.reverse.json', 'r'))
+            query = topics[event]
+
             for document in an_event:
                 a_doc = an_event[document]
                 sent_idx = 0
                 for sentence in a_doc:
                     # construct a vector for each sentence in the document
                     if 1 < len(sentence):
+
                         vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
-                                             an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(sentence)]], q_lex[q_sent2idx[' '.join(sentence)]])
+                                             an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(sentence)]], q_lex[q_sent2idx[' '.join(sentence)]], query)
                         sent_idx += 1
                         # Add additional features here
                         x.append(vec)
@@ -204,14 +210,14 @@ class ContentSelector:
                     for sentence in sents:
                         if len(sentence) > 1:
                             vec = self.vectorize(sentence, sent_idx, len(a_sum),  document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
-                                                 an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, g_eigen[g_idx[" ".join(sentence)]],  g_q_lex[g_q_sent2idx[' '.join(sentence)]])
+                                                 an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, g_eigen[g_idx[" ".join(sentence)]],  g_q_lex[g_q_sent2idx[' '.join(sentence)]], query)
                             sent_idx += 1
                             # Add additional features here
                             x.append(vec)
                             y.append(eval.get_rouge(sentence, sum_bigs, sum_tri, sum_quad, sum_words_fd))
-            if unseen:
-                vec_file = open('vecs.p', 'wb')
-                pickle.dump(self.vecs, vec_file)
+            #if unseen:
+            vec_file = open('vecs.p', 'wb')
+            pickle.dump(self.vecs, vec_file)
         self.scaler.fit(x)
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
@@ -275,6 +281,9 @@ class ContentSelector:
         q_lex = self.cluster_info[name]['q_lex']
         q_sent2idx = self.cluster_info[name]['q_sent2idx']
 
+        topics = json.load(open('../src/data/training.topic_dict.reverse.json', 'r'))
+        query = topics[name]
+
         for document in docs:
             doc_sents = []
             a_doc = docs[document]
@@ -290,7 +299,7 @@ class ContentSelector:
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
                     vec = self.vectorize(proc_sent, sent_idx, len(a_doc),  document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
-                                         docs, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(proc_sent)]], q_lex[q_sent2idx[" ".join(proc_sent)]])
+                                         docs, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(proc_sent)]], q_lex[q_sent2idx[" ".join(proc_sent)]], query)
                     sent_idx += 1
                     vec = vec.reshape(1, -1)
                     vec = self.scaler.transform(vec)
