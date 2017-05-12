@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-python3 /home2/mblac6/573/573/src/main.py /home2/mblac6/573/573/src/data/new_human.processed.json /home2/mblac6/573/573/src/data/new_training.processed.json /home2/mblac6/573/573/src/data/devtest.json /home2/mblac6/573/573/src/data/devtest.processed.json
-./ROUGE-1.5.5.pl -e data -a -n 4 -x -m -c 95 -r 1000 -f A -p 0.5 -t 0 -l 100 -s -d /home2/mblac6/573/573/eval/test.xml
+python3 ../src/main.py ../src/data/new_human.processed.json ../src/data/new_training.processed.json ../src/data/devtest.json ../src/data/devtest.processed.json
+./ROUGE-1.5.5.pl -e data -a -n 4 -x -m -c 95 -r 1000 -f A -p 0.5 -t 0 -l 100 -s -d ../eval/test.xml

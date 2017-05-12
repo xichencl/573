@@ -1,8 +1,10 @@
 import json
 import ContentSelector
 import ContentRealizer
+import ContentSorter
 import sys
 import re
+import random
 
 gold = json.load(open(sys.argv[1], 'r'))
 train_documents = json.load(open(sys.argv[2], 'r'))
@@ -22,13 +24,12 @@ for event in test_documents:
     print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
     results = selector.test(an_event, proc_event, event, 10)
     picked = realizer.realize(results, 100)
-    summary = re.sub('\W+', ' ', ' '.join(picked))
+    summary = re.sub('\s+', ' ', ' '.join(picked))
     letter = event[-1]
 
     if 'Group' in event:
-        out = open('/home2/mblac6/573/573/outputs/D2/' + event, 'w')
+        out = open('../outputs/D2/' + event, 'w')
     else:
-        out = open('/home2/mblac6/573/573/outputs/D2/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
+        out = open('../outputs/D2/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
     out.write(summary)
-
 
