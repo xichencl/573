@@ -9,7 +9,7 @@ class ContentRealizer:
         self.stemmer = nltk.stem.porter.PorterStemmer()
         self.remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
         self.tfidf_vectorizer = TfidfVectorizer(tokenizer=self.normalize, stop_words='english')
-        self.glove_vectorizer = GloveTextVectorizer.GloveTextVectorizer("./word_embedding/glove.6B.50d.txt")
+        self.glove_vectorizer = GloveTextVectorizer.GloveTextVectorizer("../src/word_embedding/glove.6B.50d.txt")
 
         self.TEXT                 = 0
         self.SCORE                = 1
