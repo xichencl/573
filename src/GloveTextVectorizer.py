@@ -11,9 +11,9 @@ class GloveTextVectorizer:
         self.remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
         self.vectorizer = TfidfVectorizer(tokenizer=self.normalize, stop_words='english')
 
-        print('Indexing word vectors.', encoding="utf-8")
+        print('Indexing word vectors.')
         self.embeddings_index = {}
-        f = open(glove_file_location)
+        f = open(glove_file_location, encoding="utf-8")
         i = 0
         for line in f:
             try:
