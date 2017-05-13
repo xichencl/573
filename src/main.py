@@ -5,6 +5,7 @@ import ContentSorter
 import sys
 import re
 import random
+import pickle
 
 gold = json.load(open(sys.argv[1], 'r'))
 train_documents = json.load(open(sys.argv[2], 'r'))
@@ -17,6 +18,7 @@ selector.train(train_documents, gold)
 realizer = ContentRealizer.ContentRealizer()
 
 index = 0
+
 for event in test_documents:
     index += 1
     an_event = test_documents[event]
@@ -26,10 +28,9 @@ for event in test_documents:
     picked = realizer.realize(results, 100)
     summary = re.sub('\s+', ' ', ' '.join(picked))
     letter = event[-1]
-
     if 'Group' in event:
-        out = open('../outputs/D2/' + event, 'w')
+        out = open('../outputs/D3/' + event, 'w')
     else:
-        out = open('../outputs/D2/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
+        out = open('../outputs/D3/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
     out.write(summary)
 

@@ -62,7 +62,7 @@ class ContentSelector:
             vec.extend(q_kl.get_kl(sentence, query.split()))
             vec = np.array(vec)
             self.vecs[key] = vec
-        return vec
+        return vec[:-2]
 
     # place any code that needs access to the gold standard summaries here
     def train(self, docs, gold):
@@ -222,7 +222,7 @@ class ContentSelector:
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
 
-        self.model = LinearRegression()
+        self.model = MLPRegressor(hidden_layer_sizes=[50,])
         self.model.fit(x, y)
         feature_select.get_feats(x, y)
 
@@ -248,15 +248,15 @@ class ContentSelector:
 
             self.cluster_info[name]["cluster_counts"] = llr.get_cluster_counts(preproc)
 
-            lex_results = lexrank.get_lexrank_scores(docs, self.cluster_info[name]["tf_idf"], 0.1, 0.1,
+            lex_results = lexrank.get_lexrank_scores(preproc, self.cluster_info[name]["tf_idf"], 0.1, 0.1,
                                                      0.1, False)
             self.cluster_info[name]["eigen"] = lex_results[0]
             self.cluster_info[name]["sent2idx"] = lex_results[1]
 
             topics = json.load(open('../src/data/training.topic_dict.reverse.json', 'r'))
             query = topics[name]
-            rel_scores, sentences = Query.get_rel_scores(docs, query.split())
-            q_lex_result = Query.get_lexrank_scores(docs, self.cluster_info[name]["tf_idf"], rel_scores, 0.2,
+            rel_scores, sentences = Query.get_rel_scores(preproc, query.split())
+            q_lex_result = Query.get_lexrank_scores(preproc, self.cluster_info[name]["tf_idf"], rel_scores, 0.2,
                                                     0.1,
                                                     0.95,
                                                     False)
@@ -299,7 +299,7 @@ class ContentSelector:
                 sentence = re.sub('\n', ' ', sentence)
                 if 7 < len(sentence.split()) < 22:
                     vec = self.vectorize(proc_sent, sent_idx, len(a_doc),  document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
-                                         docs, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(proc_sent)]], q_lex[q_sent2idx[" ".join(proc_sent)]], query)
+                                         docs, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[' '.join(proc_sent)]], q_lex[q_sent2idx[" ".join(proc_sent)]], query)
                     sent_idx += 1
                     vec = vec.reshape(1, -1)
                     vec = self.scaler.transform(vec)
