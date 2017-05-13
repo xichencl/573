@@ -11,14 +11,19 @@ class GloveTextVectorizer:
         self.remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
         self.vectorizer = TfidfVectorizer(tokenizer=self.normalize, stop_words='english')
 
-        print('Indexing word vectors.')
+        print('Indexing word vectors.', encoding="utf-8")
         self.embeddings_index = {}
         f = open(glove_file_location)
+        i = 0
         for line in f:
-            values = line.split()
-            word = values[0]
-            coefs = np.asarray(values[1:], dtype='float32')
-            self.embeddings_index[word] = coefs
+            try:
+                values = line.split()
+                word = values[0]
+                coefs = np.asarray(values[1:], dtype='float32')
+                self.embeddings_index[word] = coefs
+            except ValueError as e:
+                print ("error", e, "on line", i)
+            i += 1
         f.close()
         print('Found %s word vectors.' % len(self.embeddings_index))
 
