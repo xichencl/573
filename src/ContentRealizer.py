@@ -2,6 +2,7 @@ import nltk, string
 from sklearn.feature_extraction.text import TfidfVectorizer
 import GloveTextVectorizer
 import LabelMarker
+import re
 
 
 class ContentRealizer:
@@ -123,9 +124,10 @@ class ContentRealizer:
         global_index = 0
         for article_name in _sentences:
             sentence_list = _sentences[article_name]
+            publish_date = re.search(r"(\d+)", article_name).group()
             for i in range(0, len(sentence_list)):
                 sentence_tuple = sentence_list[i]
-                id_sentence_map[global_index] = [sentence_tuple[0], sentence_tuple[1], article_name, i, int(float(article_name.split('_')[2])), global_index, -1]
+                id_sentence_map[global_index] = [sentence_tuple[0], sentence_tuple[1], article_name, i, int(float(publish_date)), global_index, -1]
                 global_index += 1
 
         return id_sentence_map
