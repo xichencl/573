@@ -28,12 +28,13 @@ def compress(sent):
     proc_sent = re.sub(r' (\.|\?|!|,|\'|:)', r'\1', proc_sent)
     return proc_sent
 
-docs = json.load(open('data/training.json', 'r'))
-for key in docs:
-    cluster = docs[key]
-    for doc in cluster:
-        a_doc = cluster[doc]
-        for sent in a_doc:
-            print(sent)
-            print(compress(sent))
-            print('\n')
+if __name__ == "__main__":
+    docs = json.load(open('data/training.json', 'r'))
+    for key in docs:
+        cluster = docs[key]
+        for doc in cluster:
+            a_doc = cluster[doc]
+            for sent in a_doc:
+                print(sent)
+                print(compress(sent))
+                print('\n')
