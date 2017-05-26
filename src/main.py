@@ -29,8 +29,8 @@ for event in test_documents:
     summary = re.sub('\s+', ' ', ' '.join(picked))
     letter = event[-1]
     if 'Group' in event:
-        out = open('../outputs/D3/' + event, 'w')
+        out = open('../outputs/D4_devtest/' + event, 'w')
     else:
-        out = open('../outputs/D3/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
+        out = open('../outputs/D4_devtest/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
     out.write(summary)
 
