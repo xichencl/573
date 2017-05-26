@@ -3,6 +3,8 @@ import re
 
 def compress(sent):
     sent = re.sub(', age [0-9]+,', '', sent)
+    sent = re.sub(', said [a-zA-Z]+,', '', sent)
+    sent = re.sub(', [a-zA-Z]+ said,', '', sent)
     words = nltk.word_tokenize(sent)
     pos = nltk.pos_tag(words)
     if pos[0][1] == 'CC' or pos[0][1] == 'IN':
@@ -13,5 +15,3 @@ def compress(sent):
             new_sent.append(word[0])
     proc_sent = ' '.join(new_sent)
     return proc_sent
-
-print(compress('the brown dog, age 12, runs quickly'))
