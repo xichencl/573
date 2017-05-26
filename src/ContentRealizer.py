@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import GloveTextVectorizer
 import LabelMarker
 import re
+import SentenceCompressor
 
 
 class ContentRealizer:
@@ -65,7 +66,7 @@ class ContentRealizer:
             # sort by group prob
             result[i:] = sorted(result[i:], key=lambda x: adjacent_matrix[class_idx1][x[self.SENT_GROUP_ID]], reverse=True)
 
-        return [s[0] for s in result]
+        return [SentenceCompressor.compress(s[0]) for s in result]
 
     # C[i,j] = freq(i,j)^2 / (freq(i)* freq(j))
     # article_sentence_map  ->  {article_name: [global_sentence_id[0], global_sentence_id[1], ...]}
@@ -112,7 +113,8 @@ class ContentRealizer:
                 break
             if self.max_cosine_sim(i, result_indices, tfidf) < 0.4:
                 result_indices.append(i)
-                total_len += len(sentences[i][0].split())
+                compressed = SentenceCompressor.compress(sentences[i][0])
+                total_len += len(compressed.split())
         #get global idx
         global_result_indices = [sentences[idx][self.GLOBAL_SENT_ID] for idx in result_indices]
         return global_result_indices

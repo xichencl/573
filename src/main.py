@@ -26,10 +26,11 @@ for event in test_documents:
     print("Testing " + str(index) + '/' + str(len(test_documents.keys())))
     results = selector.test(an_event, proc_event, event, 10)
     picked = realizer.realize(results, 100)
-    summary = re.sub('\s+', ' ', ' '.join(picked))
+    summary = '\n'.join(sent for sent in picked)
+    #summary = re.sub('\s+', ' ',summary)
     letter = event[-1]
     if 'Group' in event:
-        out = open('../outputs/D4_devtest/' + event, 'w')
+       out = open('../outputs/D4_devtest/' + event, 'w')
     else:
         out = open('../outputs/D4_devtest/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
     out.write(summary)
