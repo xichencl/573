@@ -19,9 +19,9 @@ def compress(sent):
     if pos[0][1] == 'CC' or pos[0][1] == 'IN':
         pos = pos[1:]
     new_sent = []
-    '''for word in pos:
-        if word[1] != 'RB' and word[1] != 'JJ':
-            new_sent.append(word[0])'''
+    for word in pos:
+        if word[1] != 'RB':
+            new_sent.append(word[0])
     proc_sent = sent
     if proc_sent[0].islower():
         proc_sent = proc_sent[:1].upper() + proc_sent[1:]
