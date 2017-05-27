@@ -43,8 +43,6 @@ def compress(sent):
                             new_sent.append(word[0])
                     else:
                         new_sent.append(word[0])
-
-
             proc_sent = ' '.join(new_sent)
             #proc_sent = sent
             if len(proc_sent):
@@ -54,3 +52,4 @@ def compress(sent):
                 proc_sent = re.sub('\$ ', '\$', proc_sent)
 
                 return proc_sent
+
