@@ -26,6 +26,11 @@ class ContentSelector:
     def __init__(self):
         self.model = None
         self.background_counts = None
+        try:
+            co_file = open('../src/features/counts.p', 'rb')
+            self.background_counts = pickle.load(co_file)
+        except FileNotFoundError:
+            pass
         self.scaler = StandardScaler()
         self.vecs = {}
         try:
@@ -59,17 +64,12 @@ class ContentSelector:
             vec.append(idx)
             vec.append(lexrank)
             vec.append(q_lex)
-            vec.extend(q_kl.get_kl(sentence, query.split()))
             vec = np.array(vec)
             self.vecs[key] = vec
-        return vec[:-2]
+        return vec
 
     # place any code that needs access to the gold standard summaries here
     def train(self, docs, gold):
-
-        back_counts = llr.get_back_counts(docs)
-        self.background_counts = back_counts
-
         event_ind = 1
         # process sentences in each document of each cluster
         x = []
@@ -186,7 +186,7 @@ class ContentSelector:
                     # construct a vector for each sentence in the document
                     if 1 < len(sentence):
 
-                        vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
+                        vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], self.background_counts, cluster_counts,
                                              an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(sentence)]], q_lex[q_sent2idx[' '.join(sentence)]], query)
                         sent_idx += 1
                         # Add additional features here
@@ -209,7 +209,7 @@ class ContentSelector:
                     sent_idx = 0
                     for sentence in sents:
                         if len(sentence) > 1:
-                            vec = self.vectorize(sentence, sent_idx, len(a_sum),  document, self.cluster_info[event]["tf_idf"], back_counts, cluster_counts,
+                            vec = self.vectorize(sentence, sent_idx, len(a_sum),  document, self.cluster_info[event]["tf_idf"], self.background_counts, cluster_counts,
                                                  an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, g_eigen[g_idx[" ".join(sentence)]],  g_q_lex[g_q_sent2idx[' '.join(sentence)]], query)
                             sent_idx += 1
                             # Add additional features here
