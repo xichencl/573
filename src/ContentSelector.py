@@ -227,6 +227,7 @@ class ContentSelector:
         feature_select.get_feats(x, y)
 
     def test(self, docs, preproc, name, query=None):
+        print(name)
         unseen = False
         if name not in self.cluster_info:
             unseen = True
