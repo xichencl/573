@@ -29,7 +29,7 @@ for event in test_documents:
     summary = '\n'.join(sent.lstrip() for sent in picked)
     letter = event[-1]
     if 'Group' in event:
-       out = open('../outputs/D4_devtest/' + event, 'w')
+       out = open('../outputs/D4_evaltest/' + event, 'w')
     else:
-        out = open('../outputs/D4_devtest/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
+        out = open('../outputs/D4_evaltest/' + event[:-1] + '-A.M.100.' + letter + '.A', 'w')
     out.write(summary)
