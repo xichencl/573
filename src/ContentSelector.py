@@ -222,7 +222,7 @@ class ContentSelector:
         x = self.scaler.transform(x)
         y = np.array(y) / max(y)
 
-        self.model = MLPRegressor(hidden_layer_sizes=[50,])
+        self.model = MLPRegressor(hidden_layer_sizes=[50,], learning_rate="adaptive")
         self.model.fit(x, y)
         feature_select.get_feats(x, y)
 
