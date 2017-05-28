@@ -66,6 +66,7 @@ class ContentSelector:
             vec.append(q_lex)
             vec = np.array(vec)
             self.vecs[key] = vec
+        #vec = np.delete(vec, 36)
         return vec
 
     # place any code that needs access to the gold standard summaries here
@@ -185,7 +186,6 @@ class ContentSelector:
                 for sentence in a_doc:
                     # construct a vector for each sentence in the document
                     if 1 < len(sentence):
-
                         vec = self.vectorize(sentence, sent_idx, len(a_doc), document, self.cluster_info[event]["tf_idf"], self.background_counts, cluster_counts,
                                              an_event, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[" ".join(sentence)]], q_lex[q_sent2idx[' '.join(sentence)]], query)
                         sent_idx += 1
@@ -227,7 +227,6 @@ class ContentSelector:
         feature_select.get_feats(x, y)
 
     def test(self, docs, preproc, name, query=None):
-        print(name)
         unseen = False
         if name not in self.cluster_info:
             unseen = True
@@ -301,6 +300,9 @@ class ContentSelector:
                 if 7 < len(sentence.split()) < 22:
                     vec = self.vectorize(proc_sent, sent_idx, len(a_doc),  document, self.cluster_info[name]["tf_idf"], self.background_counts, cluster_counts,
                                          docs, back_list, vocab, back_list2, vocab2, first_p, all_p, eigen[sent2idx[' '.join(proc_sent)]], q_lex[q_sent2idx[" ".join(proc_sent)]], query)
+                    #if np.isnan(vec).any():
+                    #    print(q_lex)
+                    vec = np.nan_to_num(vec)
                     sent_idx += 1
                     vec = vec.reshape(1, -1)
                     vec = self.scaler.transform(vec)
